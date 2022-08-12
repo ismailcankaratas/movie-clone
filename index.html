@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wovie - Movie and TV Series</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <script src="https://kit.fontawesome.com/e262157120.js" crossorigin="anonymous"></script>
 
     <!-- Link Swiper's CSS -->
@@ -81,6 +81,17 @@
 
     <div class="container">
         <!-- Header Begin -->
+        <div class="mobil-search" id="mobil-search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+            </svg>
+            <input type="text" placeholder="Search .." id="search-input">
+            <svg onclick="searchClose()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path
+                    d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+            </svg>
+        </div>
         <div class="header">
             <div class="mobil-menu-icon" onclick="menuOpen()">
                 <i class="fa-solid fa-bars"></i>
@@ -90,11 +101,19 @@
                     <img src="assets/images/logo.svg" alt="">
                 </a>
             </div>
-            <div class="header-search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path
-                        d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
-                </svg>
+            <div class="header-search" id="header-search">
+                <div class="icon">
+                    <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                    </svg>
+                </div>
+                <div class="mobilSearchIcon">
+                    <svg onclick="searchOpen()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                    </svg>
+                </div>
                 <input type="text" placeholder="Search ..">
             </div>
             <div class="header-links">
@@ -192,7 +211,7 @@
             <!-- Sidebar Finish -->
 
             <div class="content">
-                <!-- Swiper Begin-->
+                <!-- Swiper Begin
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -248,7 +267,60 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                <!-- Swiper Finish-->
+                Swiper Finish-->
+
+                <div id="slider" class="slider">
+                    <div class="slider-content">
+                        <div class="slider-content-wrapper">
+                            <div class="slide">
+                                <div class="slide-caption">
+                                    <div class="slide-header">
+                                        <div class="imdb">IMDB :
+                                            19404 </div>
+                                        <div>
+                                            2015 </div>
+                                        <div class="category text-12">
+                                            Movie </div>
+                                    </div>
+                                    <div class="title">
+                                        Mad Max: Fury Road </div>
+                                    <div class="description">
+                                        An apocalyptic story set in the furthest reaches of our planet, in a stark
+                                        desert landscape where humanity is broken, and most everyone is crazed fighting
+                                        for the necessities of life. </div>
+                                </div>
+                                <img src="assets/images/sliders/mad-max-fury-road.webp" alt="">
+                            </div>
+                            <div class="slide">
+                                <div class="slide-caption">
+                                    <div class="slide-header">
+                                        <div class="imdb">
+                                            IMDB :
+                                            8.2
+                                        </div>
+                                        <div>
+                                            2010
+                                        </div>
+                                        <div class="category text-12">
+                                            Movie
+                                        </div>
+                                    </div>
+                                    <div class="title">
+                                        Shutter Island
+                                    </div>
+                                    <div class="description">
+                                        World War II soldier-turned-U.S. Marshal Teddy Daniels investigates the
+                                        disappearance of a patient from a hospital for the criminally insane, but his
+                                        efforts are compromised by his troubling visions and also by a mysterious
+                                        doctor.
+                                    </div>
+                                </div>
+                                <img src="assets/images/sliders/shutter-island.webp" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Trailer Begin -->
                 <div class="movie-trailer">
@@ -332,149 +404,400 @@
                 </div>
                 <!-- Trailer Finish -->
 
+
                 <section>
                     <div class="section-heading">
                         <span>Newest Movies</span>
                     </div>
                     <div class="list-movie">
                         <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
-                            </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <div class="movie-image">
-                                <img src="assets/images/movies/batman-begins.webp" alt="">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
                             </div>
-                            <div class="movie-info">
-                                <a href="" class="movie-titlesub">
-                                    Batman Begins
-                                </a>
-                                <a href="" class="movie-title">Batman Begins</a>
-                                <a href="" class="movie-category">
-                                    Action
-                                </a>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        SD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            7.7</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="assets/images/movies/batman-begins.webp" alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Batman Begins
+                                    </a>
+                                    <a href="" class="movie-title">Batman Begins</a>
+                                    <a href="" class="movie-category">
+                                        Action
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -530,6 +853,29 @@
                     </div>
                     <div class="list-movie">
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -544,6 +890,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -558,6 +927,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -572,6 +964,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -586,6 +1001,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -600,6 +1038,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -614,6 +1075,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -628,6 +1112,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -642,6 +1149,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -656,6 +1186,29 @@
                             </div>
                         </div>
                         <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        HD </div>
+                                    <div class="imdb">
+                                        <span>
+                                            8.4</span>
+                                        <svg viewBox="0 0 36 36" width="36px" height="36px">
+                                            <path d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831" fill="none"
+                                                stroke="var(--color-primary)" stroke-width=" 3"
+                                                stroke-dasharray="77, 100" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="movie-image">
                                 <img src="assets/images/movies/chilling-adventures-of-sabrina.webp" alt="">
                             </div>
@@ -901,27 +1454,79 @@
                 </section>
             </div>
         </main>
+        <div class="footer">
+            <div class="links">
+                <div class="footer-nav">
+                    <div class="nav-head">
+                        Categories </div>
+                    <div class="nav-links">
+                        <a href="#" title="Action">
+                            Action</a>
+                        <a href="#" title="Adventure">
+                            Adventure</a>
+                        <a href="#" title="Animation">
+                            Animation</a>
+                        <a href="#" title="Comedy">
+                            Comedy</a>
+                        <a href="#" title="Crime">
+                            Crime</a>
+                        <a href="#" title="Documentary">
+                            Documentary</a>
+                        <a href="#" title="Drama">
+                            Drama</a>
+                        <a href="#" title="Family">
+                            Family</a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-head">
+                        Featured </div>
+                    <div class="nav-links">
+                        <a href="#" title="Interstellar">
+                            Interstellar</a>
+                        <a href="#" title="Guardians of the Galaxy">
+                            Guardians of the Galaxy</a>
+                        <a href="#" title="Harry Potter and the Philosopher's Stone">
+                            Harry Potter and the Philosopher's Stone</a>
+                        <a href="#" title="Iron Man">
+                            Iron Man</a>
+                        <a href="#" title="The Shawshank Redemption">
+                            The Shawshank Redemption</a>
+                        <a href="#" title="Django Unchained">
+                            Django Unchained</a>
+                        <a href="#" title="Mad Max: Fury Road">
+                            Mad Max: Fury Road</a>
+                        <a href="#" title="Avengers: Age of Ultron">
+                            Avengers: Age of Ultron</a>
+                    </div>
+                </div>
+                <div class="nav-social">
+                    <a href="#" target="_blank" rel="noopener" title="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" title="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" title="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" title="youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>Copyright ©
+                    Wovie 2022 </span>
+            </div>
+        </div>
     </div>
 
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="index.js"></script>
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".swiper", {
-            cssMode: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            mousewheel: true,
-            keyboard: true,
-        });
-    </script>
+    <!-- JS -->
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/slider.js"></script>
+
 </body>
 
 </html>
