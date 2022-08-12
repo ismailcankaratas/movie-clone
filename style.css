@@ -404,12 +404,13 @@ main {
 /*                      Movie Trailer Styles                          
 /*=================================================================*/
 .list-episodes {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
 .list-episodes .episodes {
+    flex: auto 1;
     position: relative;
     display: flex;
     align-items: center;
@@ -417,6 +418,7 @@ main {
     background-color: var(--color-bg-variant);
     padding: .5rem;
     border-radius: 6px;
+    margin: 1rem 0rem;
 }
 
 
@@ -444,11 +446,15 @@ main {
     background-color: var(--color-bg-variant);
     padding: .5rem;
     border-radius: 1rem;
+    z-index: 10;
 }
+
+/*=================================================================*/
+/*                      Actorts Styles                          
+/*=================================================================*/
 
 .actors {
     display: flex;
-    flex: 1;
     gap: 1.5rem;
 }
 
@@ -457,9 +463,10 @@ main {
     border-radius: 6px;
 }
 
-.actors .actor.name {
+.actors .actor .name {
     font-weight: 600;
     color: white;
+    font-size: 1rem;
 }
 
 /*=================================================================*/
@@ -773,6 +780,30 @@ main {
     .categories.category {
         width: 150px;
         min-width: 150px;
+    }
+
+    .list-episodes {
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+
+    .list-episodes .episodes .episodes-info {
+        width: 150px;
+    }
+
+    .actors {
+        overflow: auto;
+    }
+
+    .actors .actor img {
+        width: 100px;
+        border-radius: 6px;
+    }
+
+    .actors .actor .name {
+        font-weight: 600;
+        color: white;
+        font-size: .8rem;
     }
 }
 
