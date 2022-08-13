@@ -28,10 +28,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ::-webkit-scrollbar {
-    display: none;
-} */
-
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-bg);
@@ -43,8 +39,11 @@ body {
 /*                      Header Styles                          
 /*=================================================================*/
 .container {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 main {
@@ -61,6 +60,8 @@ a:hover {
 }
 
 section .section-heading {
+    display: flex;
+    align-items: center;
     margin: 1rem 0rem;
 }
 
@@ -79,11 +80,36 @@ section .section-heading span:before {
     content: "";
     align-self: flex-start;
     position: absolute;
-    top: 2px;
-    bottom: 4px;
+    bottom: 8px;
     left: 0;
     width: .4rem;
-    height: 1.3rem;
+    height: 1.4rem;
+}
+
+section .section-heading a {
+    font-size: .9rem;
+    color: var(--color-light-variant);
+}
+
+.scroll-up {
+    display: none;
+    position: fixed;
+    background-color: var(--color-bg-variant);
+    padding: .8rem 1.4rem;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 50%;
+    z-index: 50;
+    transition: var(--transition);
+}
+
+.scroll-up:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.scroll-up i {
+    font-size: 1rem;
 }
 
 .header {
@@ -128,6 +154,7 @@ section .section-heading span:before {
     padding: 0rem .75rem;
     font-weight: 500;
     font-size: 1rem;
+    color: white;
 }
 
 .header .header-search input::placeholder {
@@ -202,7 +229,14 @@ main {
 }
 
 .sidebar {
-    width: 100%;
+    margin: 0;
+    pointer-events: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 0 0 230px;
+    max-width: 230px;
+    position: sticky;
 }
 
 .sidebar ul {
@@ -268,7 +302,8 @@ main {
 }
 
 .content {
-    width: 80%;
+    flex: 1 1 auto;
+    max-width: 100%;
 }
 
 /*=================================================================*/
@@ -405,13 +440,13 @@ main {
 }
 
 .prev-arrow {
-    top: 43%;
+    top: 45%;
     left: 88%;
 }
 
 .next-arrow {
     top: 60%;
-    right: 5%;
+    left: 88%;
 }
 
 .prev-arrow:hover,
@@ -452,29 +487,6 @@ main {
     width: 10px;
     height: 10px;
     background-color: white;
-}
-
-/* Mods */
-.disabled {
-    background-color: #DCCFCF;
-    color: #B0A8A8;
-    cursor: default;
-    pointer-events: none;
-}
-
-.d-none {
-    display: none;
-}
-
-.active {
-    opacity: 1;
-}
-
-.centered {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /*=================================================================*/
@@ -580,6 +592,7 @@ main {
 /*=================================================================*/
 .movie-trailer {
     display: flex;
+    justify-content: space-evenly;
     overflow: auto;
     gap: 1rem;
     margin: 1rem 0rem;
@@ -892,22 +905,16 @@ main {
 /*=================================================================*/
 /*                      Media Queries                   
 /*=================================================================*/
-
-@media (max-width: 2400px) {
+@media (max-width: 2600px) {
     .container {
-        max-width: var(--container-width-md);
-    }
-}
+        max-width: 1270px;
 
-@media (max-width: 1800px) {
-    .container {
-        max-width: var(--container-width-ms);
     }
 }
 
 @media (max-width: 992px) {
     .container {
-        max-width: var(--container-width-lg);
+        max-width: 1170px;
     }
 
     .header {
@@ -1024,7 +1031,7 @@ main {
 
 @media (max-width: 768px) {
     .container {
-        max-width: var(--container-width-lg);
+        max-width: 720px;
     }
 
     .slide {
@@ -1058,12 +1065,15 @@ main {
         min-width: 280px;
     }
 
+    .movie-trailer {
+        justify-content: left;
+    }
 }
 
 
 @media (max-width: 576px) {
     .container {
-        max-width: var(--container-width-ms);
+        max-width: 540px;
     }
 
     .slide {

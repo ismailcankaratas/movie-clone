@@ -3,30 +3,32 @@
 const slider = (function () {
 
     //const
-    const slider = document.getElementById("slider"); // основная обертка
-    console.log(slider);
-    const sliderContent = document.querySelector(".slider-content"); // обертка для контейнера слайдов и контролов
-    console.log(sliderContent);
-    const sliderWrapper = document.querySelector(".slider-content-wrapper"); // контейнер для слайдов
-    const elements = document.querySelectorAll(".slide"); // обертка для слайда
-    const sliderContentControls = createHTMLElement("div", "slider-content__controls"); // блок контролов внутри sliderContent
-    let dotsWrapper = null; // Обертка dots
-    let prevButton = null; // Кнопки
+    const slider = document.getElementById("slider");
+    // console.log(slider);
+    const sliderContent = document.querySelector(".slider-content");
+    // console.log(sliderContent);
+    const sliderWrapper = document.querySelector(".slider-content-wrapper");
+    const elements = document.querySelectorAll(".slide");
+    const sliderContentControls = createHTMLElement("div", "slider-content__controls");
+    let dotsWrapper = null;
+    let prevButton = null;
     let nextButton = null;
     let autoButton = null;
-    let leftArrow = null; // Стрелки
+    let leftArrow = null;
     let rightArrow = null;
-    let intervalId = null; //идентификатор setInterval
+    let intervalId = null;
+    let dragStartX = null;
+    let dragEndX = null;
 
     // data
     const itemsInfo = {
-        offset: 0, // смещение контейнера со слайдами относительно начальной точки (первый слайд)
+        offset: 0,
         position: {
-            current: 0, // номер текущего слайда
-            min: 0, // первый слайд
-            max: elements.length - 1 // последний слайд	
+            current: 0,
+            min: 0,
+            max: elements.length - 1
         },
-        intervalSpeed: 2000, // Скорость смены слайдов в авторежиме
+        intervalSpeed: 2000,
 
         update: function (value) {
             this.position.current = value;
@@ -50,7 +52,9 @@ const slider = (function () {
         let { intervalSpeed, position, offset } = itemsInfo;
 
         if (slider && sliderContent && sliderWrapper && elements) {
-
+            if (props && props.mouseMoment) {
+                mouseSwipe();
+            }
             if (props && props.intervalSpeed) {
                 intervalSpeed = props.intervalSpeed;
             }
@@ -59,6 +63,16 @@ const slider = (function () {
                     position.current = props.currentItem;
                     offset = - props.currentItem;
                 }
+            }
+            if (props && props.autoMode) {
+                intervalId = setInterval(function () {
+                    if (itemsInfo.position.current < itemsInfo.position.max) {
+                        itemsInfo.update(itemsInfo.position.current + 1);
+                    } else {
+                        itemsInfo.reset();
+                    }
+                    _slideItem();
+                }, itemsInfo.intervalSpeed)
             }
             if (props && props.buttons) {
                 controlsInfo.buttonsEnabled = true;
@@ -71,7 +85,39 @@ const slider = (function () {
             _createControls(controlsInfo.dotsEnabled, controlsInfo.buttonsEnabled);
             _render();
         } else {
-            console.log("Разметка слайдера задана неверно. Проверьте наличие всех необходимых классов 'slider/slider-content/slider-wrapper/slider-content__item'");
+            console.error("Kaydırıcı düzeni yanlış. Tüm gerekli sınıfları kontrol edin 'slider/slider-content/slider-wrapper/slide'");
+        }
+    }
+    function mouseSwipe() {
+        //Mouse events
+        slider.onmousedown = dragStart;
+        slider.onmouseup = dragEnd;
+
+        //Tounch events
+        slider.addEventListener('touchstart', dragStart);
+        slider.addEventListener('touchend', dragAction);
+        slider.addEventListener('touchmove', dragEnd);
+    }
+    function dragStart(e) {
+        if (e.type == "touchstart") {
+            dragStartX = e.touches[0].clientX;
+        } else {
+            dragStartX = e.clientX;
+        }
+    }
+    function dragEnd(e) {
+        if (e.type == "touchmove") {
+            dragEndX = e.touches[0].clientX;
+        } else {
+            dragEndX = e.clientX;
+            dragAction();
+        }
+    }
+    function dragAction(e) {
+        if (dragEndX - dragStartX > 300) { // Right
+            updateItemsInfo(itemsInfo.position.current - 1);
+        } else if (dragEndX - dragStartX < -300) { // Left
+            updateItemsInfo(itemsInfo.position.current + 1);
         }
     }
 
@@ -171,6 +217,12 @@ const slider = (function () {
     }
 
     function updateItemsInfo(value) {
+        console.log(value);
+        if (value == -1) {
+            value = itemsInfo.position.max;
+        } else if (value == itemsInfo.position.max + 1) {
+            value = 0;
+        }
         itemsInfo.update(value);
         _slideItem(true);
     }
@@ -189,13 +241,10 @@ const slider = (function () {
             ];
         }
 
-        // Отображаем/скрываем контроллы
         setClass(controlsArray);
 
-        // Передвигаем слайдер
         sliderWrapper.style.transform = `translateX(${itemsInfo.offset * 100}%)`;
 
-        // Задаем активный элемент для точек (dot)
         if (controlsInfo.dotsEnabled) {
             if (document.querySelector(".dot--active")) {
                 document.querySelector(".dot--active").classList.remove("dot--active");
@@ -218,13 +267,14 @@ const slider = (function () {
         innerHTML ? element.innerHTML = innerHTML : null;
         return element;
     }
-
     return { init };
 }())
 
 slider.init({
-    intervalSpeed: 1000,
+    intervalSpeed: 5000,
     currentItem: 0,
     buttons: false,
-    dots: true
+    dots: true,
+    autoMode: true,
+    mouseMoment: true
 });
