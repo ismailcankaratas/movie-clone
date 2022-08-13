@@ -119,6 +119,7 @@ section .section-heading a {
     width: 100%;
     margin: 0 auto;
     padding: .75rem 0rem;
+
 }
 
 .mobil-menu-icon {
@@ -131,33 +132,47 @@ section .section-heading a {
 }
 
 .header .header-search {
+    z-index: 1041;
+}
+
+.header .header-search .search-field {
     display: flex;
-    width: 340px;
     align-items: center;
     position: relative;
     background-color: var(--color-bg-variant);
     border-radius: 5rem;
-    padding: 0rem 1.3rem;
-
-    margin-left: 5rem;
+    padding: .5rem 1.3rem;
 }
 
-.header .header-search svg {
+.header .header-search .search-field svg {
     width: 1rem;
     height: 1rem;
     fill: var(--color-light-variant);
 }
 
-.header .header-search input {
+.header .search-result {
+    width: 500px;
+    display: none;
+    background-color: white;
+    z-index: 1040;
+    color: black;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: .9rem;
+    font-weight: 500;
+    margin: .2rem .5rem;
+}
+
+.header .header-search .search-field input {
     background-color: var(--color-bg-variant);
     border: none;
-    padding: 0rem .75rem;
+    padding: .5rem .75rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: .9rem;
     color: white;
 }
 
-.header .header-search input::placeholder {
+.header .header-search .search-field input::placeholder {
     color: var(--color-light-variant);
     font-size: .9rem;
     font-weight: 500;
@@ -165,6 +180,7 @@ section .section-heading a {
 
 .mobilSearchIcon {
     display: none;
+    color: white;
 }
 
 .mobil-search {
@@ -179,7 +195,7 @@ section .section-heading a {
     padding: 1.2rem;
 
     margin-left: 5rem;
-    z-index: 55;
+    z-index: 50;
 }
 
 .mobil-search svg {
@@ -595,7 +611,7 @@ main {
     justify-content: space-evenly;
     overflow: auto;
     gap: 1rem;
-    margin: 1rem 0rem;
+    margin: 2rem 0rem;
     flex-wrap: nowrap;
 }
 
@@ -908,8 +924,12 @@ main {
 @media (max-width: 2600px) {
     .container {
         max-width: 1270px;
-
     }
+
+    .header-logo img {
+        margin-right: 3rem;
+    }
+
 }
 
 @media (max-width: 992px) {
@@ -926,6 +946,7 @@ main {
         display: flex;
         width: 100% !important;
         justify-content: center;
+        margin-right: 0rem;
     }
 
     .mobil-menu-icon {
@@ -934,26 +955,35 @@ main {
         height: 20px;
     }
 
-    .header-search {
-        width: auto !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        background-color: transparent !important;
-    }
-
-    .header-search .icon {
-        fill: white !important;
-        width: 20px;
-        height: 20px;
-        display: none;
+    .header-logo img {
+        margin-right: 0rem;
     }
 
     .mobilSearchIcon {
         display: block !important;
     }
 
-    .header-search input {
+    .header .header-search {
         display: none;
+    }
+
+    .header .header-search .search-field {
+        background-color: transparent;
+    }
+
+    .header .header-search .search-field .icon {
+        display: block;
+    }
+
+    .header-search {
+        width: 100%;
+        left: 0;
+        top: 1rem;
+        position: absolute;
+    }
+
+    .header .search-result {
+        width: 95% !important;
     }
 
     .header-links {
