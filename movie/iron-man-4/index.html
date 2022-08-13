@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wovie - Movie and TV Series</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e262157120.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <a href="#top" class="scroll-up" id="scroll-up">
+        <i class="fa-solid fa-caret-up"></i>
+    </a>
+
+    <!-- Mobil Menu Begin -->
+    <div class="mobil-menu" id="mobil-menu">
+        <div class="mobil-menu-top">
+            <div class="links">
+                <a href="#">Register</a>
+                <a href="#">Login</a>
+            </div>
+            <div class="menu-close" onclick="menuClose()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-house-chimney-window"></i>
+                    Home</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-podcast"></i>
+                    Discovery</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    Trends</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    Movies</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-tv"></i>
+                    TV Shows</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-star"></i>
+                    Actors </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-tv"></i>
+                    TV Channels</a>
+            </li>
+            <li class="mobil-menu-title">
+                Discovery </li>
+            <li>
+                <a href="#">
+                    Categories</a>
+            </li>
+            <li>
+                <a href="#">
+                    Discussions</a>
+            </li>
+            <li>
+                <a href="#">
+                    Collections</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Mobil Menu Finish -->
+
+    <div class="container">
+        <!-- Header Begin -->
+        <div class="mobil-search" id="mobil-search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                    d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+            </svg>
+            <input type="text" placeholder="Search .." id="mobil-search-input" onkeyup="search(this.value)">
+            <svg onclick="searchClose()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path
+                    d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+            </svg>
+        </div>
+        <div class="header" id="top">
+            <div class="mobil-menu-icon" onclick="menuOpen()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="header-logo">
+                <a href="/">
+                    <img src="../../assets/images/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="mobilSearchIcon" onclick="searchOpen()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <form action="">
+                <div class="header-search" id="header-search">
+                    <div class="search-field" id="search-field">
+
+                        <label for="search-input" class="icon" aria-label="Search">
+                            <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                            </svg>
+                        </label>
+                        <input name="q" type="text" id="search-input" onkeyup="search(this.value)"
+                            placeholder="Search .." autocomplete="off">
+                    </div>
+                    <div class="search-result" id="search-result">
+                    </div>
+                </div>
+                <div class="typeahead-backdrop" id="typeahead-backdrop">
+                </div>
+            </form>
+
+
+            <div class="header-links">
+                <a href="#">Register</a>
+                <a href="#">Login</a>
+            </div>
+        </div>
+        <!-- Header Finish -->
+
+        <main>
+            <!-- Sidebar Begin -->
+            <div class="sidebar">
+                <ul class="menu">
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa-solid fa-house-chimney-window"></i>
+                            Home</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-podcast"></i>
+                            Discovery</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            Trends</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-clapperboard"></i>
+                            Movies</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-tv"></i>
+                            TV Shows</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-star"></i>
+                            Actors </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-tv"></i>
+                            TV Channels</a>
+                    </li>
+                    <li class="sidebar-title">
+                        Discovery </li>
+                    <li>
+                        <a href="#">
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Discussions</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Collections</a>
+                    </li>
+                </ul>
+                <ul class="top-trends">
+                    <li class="top-trends-header">Top Trends</li>
+                    <li>
+                        <a href="#">
+                            <div>Chilling Adventures of Sabrina</div>
+                            <div class="view">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                <div>2027 views</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div>Chilling Adventures of Sabrina</div>
+                            <div class="view">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                <div>2027 views</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div>Chilling Adventures of Sabrina</div>
+                            <div class="view">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                <div>2027 views</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Sidebar Finish -->
+            <div class="content">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">
+                                Movies
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Iron Man
+                        </li>
+                    </ol>
+                </nav>
+                <div class="detail-header">
+                    <div class="nav-player-select">
+                        <a class="player-select-toggle" href="#" data-embed="2669" role="button" id="videoSource"
+                            onclick="videoSourceToggle()" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Source : <span>plyr.io HLS</span>
+                        </a>
+                        <div class="video-source-menu" style="display: none;" aria-labelledby="videoSource"
+                            id="video-source-menu">
+                            <button type="button" onclick="vieoSourceSelect({name:'plyr.io MP4',embed:'123'})"
+                                data-embed="2669">
+                                <span class="name">plyr.io MP4</span>
+                                <span class="language">English Subtitle</span>
+                            </button>
+                            <button type="button" onclick="vieoSourceSelect({name:'plyr.io HLS',embed:'123'})"
+                                data-embed="2670">
+                                <span class="name">
+                                    plyr.io HLS
+                                </span>
+                                <span class="language">English Subtitle</span></button>
+                        </div>
+                    </div>
+                    <div class="nav-player-social">
+                        <div class="share">
+                            <button type="button" class="btn-svg share" onclick="shareDropdownToggle()" role="button"
+                                id="shareDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-solid fa-share-nodes"></i>
+                                <span>Share</span>
+                            </button>
+                            <div class="dropdown-share" style="display: none;" id="dropdown-share"
+                                aria-labelledby="shareDropdown">
+                                <a href="#" class="bg-facebook share-link" data-type="facebook" data-sef="#"
+                                    style="background-color: #35508a;">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-twitter share-link" style="background-color: #0e98ed;"
+                                    data-type="twitter" data-title="Iron Man" data-sef="#">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <button type="button" class="report" data-toggle="modal" data-target="#m" data-remote="#">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span>Report</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="movie-detail-embed">
+                    <div class="embed">
+                        <iframe
+                            src="https://xvideosharing.com/e/tgjjhqatq88l?d.xvideosharing.com/i/01/00000/tgjjhqatq88l"
+                            data-src="https://xvideosharing.com/e/tgjjhqatq88l?d.xvideosharing.com/i/01/00000/tgjjhqatq88l"
+                            frameborder="0" scrolling="no" allow="autoplay; encrypted-media"
+                            allowfullscreen=""></iframe>
+                    </div>
+                    <a href="https://codelug.com/item/xtreaming-movie-and-tv-show-streaming-platform-6" rel="noreferrer"
+                        class="embed-ads" target="_blank">
+                        <img src="https://demo.codelug.com/wovie/public/upload/ads/250-x-432.webp" alt="Reklam">
+                    </a>
+                </div>
+                <div class="movie-detail-content">
+                    <div class="movie-image">
+                        <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-iron-man.webp" alt="">
+                    </div>
+                    <div class="movie-detail-text">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="category">
+                                    <a href="#">
+                                        Action
+                                    </a>
+                                    <a href="#">
+                                        Science Fiction
+                                    </a>
+                                    <a href="#">
+                                        Adventure
+                                    </a>
+                                </div>
+                                <h1>
+                                    Iron Man
+                                </h1>
+                                <h2>
+                                    Iron Man
+                                </h2>
+                            </div>
+                            <button type="button">
+                                Trailer
+                            </button>
+                            <div class="video-attr">
+                                <div class="attr">
+                                    Country
+                                </div>
+                                <div class="text">
+                                    England
+                                </div>
+                            </div>
+                            <div class="video-attr">
+                                <div class="attr">
+                                    Release Date
+                                </div>
+                                <div class="text">
+                                    2008
+                                </div>
+                            </div>
+                            <div class="video-attr">
+                                <div class="attr">
+                                    Actors </div>
+                                <div class="text" data-more="" data-element="a" data-limit="6">
+                                    <a href="https://demo.codelug.com/wovie/actor/robert-downey-jr-135">
+                                        Robert Downey Jr.</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/terrence-howard-136">
+                                        Terrence Howard</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/jeff-bridges-137">
+                                        Jeff Bridges</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/gwyneth-paltrow-138">
+                                        Gwyneth Paltrow</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/leslie-bibb-139">
+                                        Leslie Bibb</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/bill-smitrovich-140">
+                                        Bill Smitrovich</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/paul-bettany-141" class="toggle"
+                                        style="display: none;">
+                                        Paul Bettany</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/jon-favreau-142" class="toggle"
+                                        style="display: none;">
+                                        Jon Favreau</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/shaun-toub-143" class="toggle"
+                                        style="display: none;">
+                                        Shaun Toub</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/faran-tahir-144" class="toggle"
+                                        style="display: none;">
+                                        Faran Tahir</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/clark-gregg-145" class="toggle"
+                                        style="display: none;">
+                                        Clark Gregg</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/peter-billingsley-146" class="toggle"
+                                        style="display: none;">
+                                        Peter Billingsley</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/sayed-badreya-147" class="toggle"
+                                        style="display: none;">
+                                        Sayed Badreya</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/tim-guinee-148" class="toggle"
+                                        style="display: none;">
+                                        Tim Guinee</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/will-lyman-149" class="toggle"
+                                        style="display: none;">
+                                        Will Lyman</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/marco-khan-150" class="toggle"
+                                        style="display: none;">
+                                        Marco Khan</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/daston-kalili-151" class="toggle"
+                                        style="display: none;">
+                                        Daston Kalili</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/ido-ezra-152" class="toggle"
+                                        style="display: none;">
+                                        Ido Ezra</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/fahim-fazli-153" class="toggle"
+                                        style="display: none;">
+                                        Fahim Fazli</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/tim-rigby-154" class="toggle"
+                                        style="display: none;">
+                                        Tim Rigby</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/nazanin-boniadi-155" class="toggle"
+                                        style="display: none;">
+                                        Nazanin Boniadi</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/stacy-stas-156" class="toggle"
+                                        style="display: none;">
+                                        Stacy Stas</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/lauren-scyphers-157" class="toggle"
+                                        style="display: none;">
+                                        Lauren Scyphers</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/jim-cramer-158" class="toggle"
+                                        style="display: none;">
+                                        Jim Cramer</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/donna-evans-159" class="toggle"
+                                        style="display: none;">
+                                        Donna Evans</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/vladimir-kubr-160" class="toggle"
+                                        style="display: none;">
+                                        Vladimir Kubr</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/javan-tahir-161" class="toggle"
+                                        style="display: none;">
+                                        Javan Tahir</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/sahar-bibiyan-162" class="toggle"
+                                        style="display: none;">
+                                        Sahar Bibiyan</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/adam-harrington-163" class="toggle"
+                                        style="display: none;">
+                                        Adam Harrington</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/meera-simhan-164" class="toggle"
+                                        style="display: none;">
+                                        Meera Simhan</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/ben-newmark-165" class="toggle"
+                                        style="display: none;">
+                                        Ben Newmark</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/ricki-lander-166" class="toggle"
+                                        style="display: none;">
+                                        Ricki Lander</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/sarah-cahill-167" class="toggle"
+                                        style="display: none;">
+                                        Sarah Cahill</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/stan-lee-49" class="toggle"
+                                        style="display: none;">
+                                        Stan Lee</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/zorianna-kit-168" class="toggle"
+                                        style="display: none;">
+                                        Zorianna Kit</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/lana-kinnear-169" class="toggle"
+                                        style="display: none;">
+                                        Lana Kinnear</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/nicole-lindeblad-170" class="toggle"
+                                        style="display: none;">
+                                        Nicole Lindeblad</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/masha-lund-171" class="toggle"
+                                        style="display: none;">
+                                        Masha Lund</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/tim-griffin-172" class="toggle"
+                                        style="display: none;">
+                                        Tim Griffin</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/joshua-harto-173" class="toggle"
+                                        style="display: none;">
+                                        Joshua Harto</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/flavia-manes-rossi-174" class="toggle"
+                                        style="display: none;">
+                                        Flavia Manes Rossi</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/samuel-l-jackson-175" class="toggle"
+                                        style="display: none;">
+                                        Samuel L. Jackson</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/russell-bobbitt-176" class="toggle"
+                                        style="display: none;">
+                                        Russell Bobbitt</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/crystal-marie-denha-177"
+                                        class="toggle" style="display: none;">
+                                        Crystal Marie Denha</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/anthony-martins-178" class="toggle"
+                                        style="display: none;">
+                                        Anthony Martins</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/james-m-myers-179" class="toggle"
+                                        style="display: none;">
+                                        James M. Myers</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/america-olivo-180" class="toggle"
+                                        style="display: none;">
+                                        America Olivo</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/sylvette-ortiz-181" class="toggle"
+                                        style="display: none;">
+                                        Sylvette Ortiz</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/ajani-perkins-182" class="toggle"
+                                        style="display: none;">
+                                        Ajani Perkins</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/toi-rose-183" class="toggle"
+                                        style="display: none;">
+                                        Toi Rose</a>
+                                    <a href="https://demo.codelug.com/wovie/actor/david-zyler-184" class="toggle"
+                                        style="display: none;">
+                                        David Zyler</a>
+                                    <div class="more">Show more</div>
+                                </div>
+                            </div>
+                            <div class="video-attr">
+                                <div class="attr">
+                                    Overview </div>
+                                <div class="text">
+                                    After being held captive in an Afghan cave, billionaire engineer Tony Stark creates
+                                    a unique weaponized suit of armor to fight evil. </div>
+                            </div>
+                            <div class="nav-social">
+                            </div>
+                            <a href="https://codelug.com/item/xtreaming-movie-and-tv-show-streaming-platform-6"
+                                rel="noreferrer" target="_blank" class="ads">
+                                <img src="https://demo.codelug.com/wovie/public/upload/ads/728-x-90.webp" alt="Reklam">
+                            </a>
+                        </div>
+                        <div class="action">
+                            <div class="video-view">
+                                <div class="view-text">
+                                    928<span>
+                                        views</span>
+                                </div>
+                            </div>
+                            <div class="action-bar">
+                                <span style="width: 0%"></span>
+                            </div>
+                            <div class="action-btns">
+                                <div class="action-btn like " data-id="4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <path
+                                            d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z" />
+                                    </svg>
+                                    <span data-votes="0">
+                                        0
+                                    </span>
+                                </div>
+                                <div class="action-btn dislike " data-id="4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                        <path
+                                            d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
+                                    </svg>
+                                    <span data-votes="0">
+                                        0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <section>
+                    <div class="section-heading">
+                        <span>Similar content</span>
+                    </div>
+                    <div class="list-movie similar-contents">
+
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        Ultra HD
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
+                                        alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Interstellar
+                                    </a>
+                                    <a href="" class="movie-title">Interstellar</a>
+                                    <a class="movie-category">
+                                        2014
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        Ultra HD
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
+                                        alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Interstellar
+                                    </a>
+                                    <a href="" class="movie-title">Interstellar</a>
+                                    <a class="movie-category">
+                                        2014
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        Ultra HD
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
+                                        alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Interstellar
+                                    </a>
+                                    <a href="" class="movie-title">Interstellar</a>
+                                    <a class="movie-category">
+                                        2014
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        Ultra HD
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
+                                        alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Interstellar
+                                    </a>
+                                    <a href="" class="movie-title">Interstellar</a>
+                                    <a class="movie-category">
+                                        2014
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie">
+                            <a href="#" class="list-media">
+                                <div class="list-media-attr">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                            <path
+                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                        </svg>
+                                    </div>
+                                    <div class="quality">
+                                        Ultra HD
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="list-caption">
+                                <div class="movie-image">
+                                    <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
+                                        alt="">
+                                </div>
+                                <div class="movie-info">
+                                    <a href="" class="movie-titlesub">
+                                        Interstellar
+                                    </a>
+                                    <a href="" class="movie-title">Interstellar</a>
+                                    <a class="movie-category">
+                                        2014
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="section-heading">
+                        <span>
+                            Comments
+                        </span>
+                    </div>
+                    <div class="comments">
+                        <div class="comment-warning">
+                            The comment field is only for members.
+                            <a href="#">Login</a>,
+                            <a href="#">Register</a>
+                        </div>
+                        <div class="comment-info">
+                            <div class="comment-total">2 Comment</div>
+                            <div class="comment-sort">
+                                <button type="button" class="btn btn-sm dropdown-toggle"
+                                    onclick="commentSortDropdownToggle()">
+                                    Sorting <span class="current">Newest</span>
+                                </button>
+                                <ul class="comment-sort-dropdown" style="display: none;" id="comment-sort-dropdown">
+                                    <a href="#" class="comment-sort-dropdown-item" data-sort="1">Newest</a>
+                                    <a href="#" class="comment-sort-dropdown-item" data-sort="3">Popular</a>
+                                    <a href="#" class="comment-sort-dropdown-item" data-sort="2">Oldest</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="list-comments" style="">
+                            <li class="list-comment " data-id="14">
+                                <div class="list-comment-content">
+                                    <div class="list-avatar"> <a href="https://demo.codelug.com/wovie/profile/gokyildiz"
+                                            target="_blank">
+                                            <div class="avatar avatar-sm" style="">A</div>
+                                        </a> </div>
+                                    <div class="list-body"> <a href="https://demo.codelug.com/wovie/profile/gokyildiz"
+                                            target="_blank" class="list-name">gokyildiz</a> <a href="#!comment=14"
+                                            class="list-date"> <time title="4 hour ago">4 hour ago</time> </a>
+                                        <div class="text">Test deneme 12345</div>
+                                        <form method="POST" class="edit-form comment-form"> <input type="hidden"
+                                                name="id" value="14"> <input type="hidden" name="action" value="update">
+                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard"=""
+                                                maxlength="500" data-content="Test deneme 12345"
+                                                placeholder="Yorum"></textarea>
+                                            <div class="comment-btn"> <button type="submit" class="btn btn-theme"
+                                                    data-loading-text="..">Edit</button> <button type="button"
+                                                    class="btn cancel">Cancel</button> </div>
+                                            <div class="response"></div>
+                                        </form>
+                                        <div class="list-comment-footer">
+                                            <div class="votes"> <a href="#" title="Beğen" class="like ">
+                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z" />
+                                                    </svg>
+                                                    <span class="likes" data-votes="0"> </span> </a> <a href="#"
+                                                    title="Beğenme" class="dislike ">
+                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
+                                                    </svg>
+                                                    <span class="dislikes" data-votes="0"> </span> </a> </div> <a
+                                                href="#" class="reply" data-parent="14" data-root="14">Reply</a>
+                                        </div>
+                                        <div class="replybox"></div>
+                                    </div>
+                                </div>
+                                <ul class="list-comments children" data-parent="14"></ul>
+                            </li>
+                            <li class="list-comment " data-id="6">
+                                <div class="list-comment-content">
+                                    <div class="list-avatar"> <a href="https://demo.codelug.com/wovie/profile/admin"
+                                            target="_blank">
+                                            <div class="avatar avatar-sm" style="">W</div>
+                                        </a> </div>
+                                    <div class="list-body"> <a href="https://demo.codelug.com/wovie/profile/admin"
+                                            target="_blank" class="list-name">admin</a> <a href="#!comment=6"
+                                            class="list-date"> <time title="2 month ago">2 month ago</time> </a>
+                                        <div class="text">Heej
+
+                                            :D :) no smile</div>
+                                        <form method="POST" class="edit-form comment-form"> <input type="hidden"
+                                                name="id" value="6"> <input type="hidden" name="action" value="update">
+                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard"=""
+                                                maxlength="500" data-content="Heej
+
+:D :) no smile" placeholder="Yorum"></textarea>
+                                            <div class="comment-btn"> <button type="submit" class="btn btn-theme"
+                                                    data-loading-text="..">Edit</button> <button type="button"
+                                                    class="btn cancel">Cancel</button> </div>
+                                            <div class="response"></div>
+                                        </form>
+                                        <div class="list-comment-footer">
+                                            <div class="votes"> <a href="#" title="Beğen" class="like ">
+                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z" />
+                                                    </svg>
+                                                    <span class="likes" data-votes="1"> 1</span> </a> <a href="#"
+                                                    title="Beğenme" class="dislike ">
+                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
+                                                    </svg>
+                                                    <span class="dislikes" data-votes="0"> </span> </a> </div> <a
+                                                href="#" class="reply" data-parent="14" data-root="14">Reply</a>
+                                        </div>
+                                        <div class="replybox"></div>
+                                    </div>
+                                </div>
+                                <ul class="list-comments children" data-parent="6">
+                                    <li class="list-comment " data-id="13">
+                                        <div class="list-comment-content">
+                                            <div class="list-avatar"> <a
+                                                    href="https://demo.codelug.com/wovie/profile/Gök123"
+                                                    target="_blank">
+                                                    <div class="avatar avatar-sm" style="">A</div>
+                                                </a> </div>
+                                            <div class="list-body"> <a
+                                                    href="https://demo.codelug.com/wovie/profile/Gök123" target="_blank"
+                                                    class="list-name">Gök123</a> <a href="#!comment=13"
+                                                    class="list-date"> <time title="4 hour ago">4 hour ago</time> </a>
+                                                <div class="text">test :) xdxdxd</div>
+                                                <form method="POST" class="edit-form comment-form"> <input type="hidden"
+                                                        name="id" value="13"> <input type="hidden" name="action"
+                                                        value="update"> <textarea name="comment"
+                                                        class="form-control mb-2" rows="1 wrap=" hard"=""
+                                                        maxlength="500" data-content="test :) xdxdxd"
+                                                        placeholder="Yorum"></textarea>
+                                                    <div class="comment-btn"> <button type="submit"
+                                                            class="btn btn-theme" data-loading-text="..">Edit</button>
+                                                        <button type="button" class="btn cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="response"></div>
+                                                </form>
+                                                <div class="list-comment-footer">
+                                                    <div class="votes"> <a href="#" title="Beğen" class="like ">
+                                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path
+                                                                    d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z" />
+                                                            </svg>
+                                                            <span class="likes" data-votes="0"> </span> </a> <a href="#"
+                                                            title="Beğenme" class="dislike ">
+                                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path
+                                                                    d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
+                                                            </svg>
+                                                            <span class="dislikes" data-votes="0"> </span> </a> </div>
+                                                    <a href="#" class="reply" data-parent="14" data-root="14">Reply</a>
+                                                </div>
+                                                <div class="replybox"></div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-comments children" data-parent="13"></ul>
+                                    </li>
+                                    <li class="list-comment " data-id="15">
+                                        <div class="list-comment-content">
+                                            <div class="list-avatar"> <a
+                                                    href="https://demo.codelug.com/wovie/profile/gokyildiz"
+                                                    target="_blank">
+                                                    <div class="avatar avatar-sm" style="">A</div>
+                                                </a> </div>
+                                            <div class="list-body"> <a
+                                                    href="https://demo.codelug.com/wovie/profile/gokyildiz"
+                                                    target="_blank" class="list-name">gokyildiz</a> <a
+                                                    href="#!comment=15" class="list-date"> <time title="4 hour ago">4
+                                                        hour ago</time> </a>
+                                                <div class="text">Test 123123123</div>
+                                                <form method="POST" class="edit-form comment-form"> <input type="hidden"
+                                                        name="id" value="15"> <input type="hidden" name="action"
+                                                        value="update"> <textarea name="comment"
+                                                        class="form-control mb-2" rows="1 wrap=" hard"=""
+                                                        maxlength="500" data-content="Test 123123123"
+                                                        placeholder="Yorum"></textarea>
+                                                    <div class="comment-btn"> <button type="submit"
+                                                            class="btn btn-theme" data-loading-text="..">Edit</button>
+                                                        <button type="button" class="btn cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="response"></div>
+                                                </form>
+                                                <div class="list-comment-footer">
+                                                    <div class="votes"> <a href="#" title="Beğen" class="like ">
+                                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path
+                                                                    d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z" />
+                                                            </svg>
+                                                            <span class="likes" data-votes="0"> </span> </a> <a href="#"
+                                                            title="Beğenme" class="dislike ">
+                                                            <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512">
+                                                                <path
+                                                                    d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
+                                                            </svg>
+                                                            <span class="dislikes" data-votes="0"> </span> </a> </div>
+                                                    <a href="#" class="reply" data-parent="14" data-root="14">Reply</a>
+                                                </div>
+                                                <div class="replybox"></div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-comments children" data-parent="15"></ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+
+        </main>
+        <div class="footer">
+            <div class="links">
+                <div class="footer-nav">
+                    <div class="nav-head">
+                        Categories </div>
+                    <div class="nav-links">
+                        <a href="#" title="Action">
+                            Action</a>
+                        <a href="#" title="Adventure">
+                            Adventure</a>
+                        <a href="#" title="Animation">
+                            Animation</a>
+                        <a href="#" title="Comedy">
+                            Comedy</a>
+                        <a href="#" title="Crime">
+                            Crime</a>
+                        <a href="#" title="Documentary">
+                            Documentary</a>
+                        <a href="#" title="Drama">
+                            Drama</a>
+                        <a href="#" title="Family">
+                            Family</a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <div class="nav-head">
+                        Featured </div>
+                    <div class="nav-links">
+                        <a href="#" title="Interstellar">
+                            Interstellar</a>
+                        <a href="#" title="Guardians of the Galaxy">
+                            Guardians of the Galaxy</a>
+                        <a href="#" title="Harry Potter and the Philosopher's Stone">
+                            Harry Potter and the Philosopher's Stone</a>
+                        <a href="#" title="Iron Man">
+                            Iron Man</a>
+                        <a href="#" title="The Shawshank Redemption">
+                            The Shawshank Redemption</a>
+                        <a href="#" title="Django Unchained">
+                            Django Unchained</a>
+                        <a href="#" title="Mad Max: Fury Road">
+                            Mad Max: Fury Road</a>
+                        <a href="#" title="Avengers: Age of Ultron">
+                            Avengers: Age of Ultron</a>
+                    </div>
+                </div>
+                <div class="nav-social">
+                    <a href="#" target="_blank" rel="noopener" title="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" title="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" title="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" title="youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>Copyright ©
+                    Wovie 2022 </span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JS -->
+    <script src="index.js"></script>
+    <script src="../../scripts/index.js"></script>
+
+</body>
+
+</html>

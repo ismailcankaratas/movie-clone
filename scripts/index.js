@@ -33,11 +33,37 @@ typeaheadBackdrop.addEventListener('click', function () {
 
 function search(value) {
     if (value.length >= 3) {
-        searchResult.innerHTML = `
-        <ul>
-            <li>"${value}" no results</li>
+        searchInput.focus();
+        if (value.indexOf("iron") == 0) {
+            searchResult.innerHTML = `
+            <ul class="typeahead-list">
+            <li class="typeahead-group">
+                <a>Results</a>
+            </li>
+            <li class="typeahead-item typeahead-group-results">
+                <a href="movie/iron-man-4">
+                    <div class="movie">
+                        <div class="media">
+                            <img src="https://demo.codelug.com/wovie/public/upload/cover/iron-man.webp"
+                                alt="">
+                        </div>
+                        <div class="movie-caption">
+                            <div class="name"><strong>Iron</strong> Man</div>
+                            <div class="category">Movie</div>
+                        </div>
+                    </div>
+                </a>
+            </li>
         </ul>
-        `;
+            `;
+        } else {
+            searchResult.innerHTML = `
+            <ul>
+                <li>"${value}" no results</li>
+            </ul>
+            `;
+        }
+
         if (window.screen.width <= 992) {
             headerSearch.style.display = "block"
             searchInput.value = value;

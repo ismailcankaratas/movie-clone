@@ -178,6 +178,36 @@ section .section-heading a {
     font-weight: 500;
 }
 
+.typeahead-list .typeahead-group a {
+    display: flex;
+    color: black;
+    padding-bottom: 1rem;
+    font-size: .8rem;
+}
+
+.typeahead-list .typeahead-item .movie {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: black;
+}
+
+.movie-caption .category {
+    color: var(--color-light);
+}
+
+.typeahead-list .typeahead-item .movie .media {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.typeahead-list .typeahead-item .movie .media img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 6px;
+}
+
+
 .mobilSearchIcon {
     display: none;
     color: white;
@@ -1114,6 +1144,5 @@ main {
         top: 10%;
         margin-left: 1rem;
     }
-
 
 }
