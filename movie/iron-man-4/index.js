@@ -37,11 +37,3 @@ function shareDropdownToggle() {
 function commentSortDropdownToggle() {
     toggle(commentSortDropdown, "block")
 }
-
-function toggle(element, display) {
-    if (element.style.display == "none") {
-        element.style.display = display;
-    } else {
-        element.style.display = "none";
-    }
-}

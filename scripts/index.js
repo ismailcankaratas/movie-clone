@@ -2,6 +2,7 @@ const mobilMenu = document.getElementById("mobil-menu");
 const mobilSearch = document.getElementById("mobil-search");
 const mobilsearchInput = document.getElementById("mobil-search-input");
 const scrollUp = document.getElementById("scroll-up");
+const adsClose = document.getElementById("ads-close");
 
 const headerSearch = document.getElementById("header-search");
 const searchField = document.getElementById("search-field");
@@ -9,6 +10,17 @@ const searchInput = document.getElementById("search-input");
 const searchResult = document.getElementById("search-result");
 
 const typeaheadBackdrop = document.getElementById("typeahead-backdrop");
+
+const loginModal = document.getElementById("login-modal");
+const registerModal = document.getElementById("register-modal");
+const authProfile = document.getElementById("auth-profile");
+const authLinks = document.getElementById("auth-links");
+const mobilAuthLinks = document.getElementById("mobil-auth-links");
+const mobilAuthProfile = document.getElementById("mobil-auth-profile");
+
+const dropdownNotification = document.getElementById("dropdown-notification");
+const dropdownPofile = document.getElementById("dropdown-profile");
+
 
 window.addEventListener('scroll', function () {
     if (window.scrollY >= 100) {
@@ -31,6 +43,10 @@ typeaheadBackdrop.addEventListener('click', function () {
 
 })
 
+
+function adsCloseToggle() {
+    adsClose.classList.remove("show");
+}
 function search(value) {
     if (value.length >= 3) {
         searchInput.focus();
@@ -85,9 +101,6 @@ function search(value) {
         typeaheadBackdrop.style.zIndex = "1040";
         typeaheadBackdrop.style.inset = "0px";
         typeaheadBackdrop.style.backgroundColor = "rgb(0, 0, 0)";
-
-
-
     }
 }
 
@@ -100,11 +113,44 @@ function menuClose() {
 }
 
 function searchOpen() {
-    console.log(1);
     mobilSearch.style.display = "flex";
     mobilsearchInput.focus();
 }
 
 function searchClose() {
     mobilSearch.style.display = "none";
+}
+
+function loginModalToggle() {
+    toggle(loginModal, "flex")
+}
+function registerModalToggle() {
+    toggle(registerModal, "flex")
+}
+
+
+function auth() {
+    loginModal.style.display = "none";
+
+    authLinks.style.display = "none";
+    mobilAuthLinks.style.display = "none";
+
+    authProfile.style.display = "flex";
+    mobilAuthProfile.style.display = "flex";
+}
+
+function notificationToggle() {
+    toggle(dropdownNotification, "block")
+}
+
+function profileToggle() {
+    toggle(dropdownPofile, "flex")
+}
+
+function toggle(element, display) {
+    if (element.style.display == "none") {
+        element.style.display = display;
+    } else {
+        element.style.display = "none";
+    }
 }
