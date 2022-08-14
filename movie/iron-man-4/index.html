@@ -15,18 +15,183 @@
     <a href="#top" class="scroll-up" id="scroll-up">
         <i class="fa-solid fa-caret-up"></i>
     </a>
+    <div class="modal" id="login-modal">
+        <button class="modal-close" onclick="loginModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Login</h3>
+                <form method="post" autocomplete="off">
+                    <div class="form-group">
+                        <label class="form-control-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="input-email" placeholder="Email"
+                            value="" required="true" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="input-password"
+                            placeholder="Password" required="true" autocomplete="off">
+                        <a href="#">Forgot password</a>
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="register-modal">
+        <button class="modal-close" onclick="registerModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3>Register</h3>
+                <form method="post" autocomplete="off" class="form-content">
+                    <div class="form-group">
+                        <label class="custom-label">Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Name" required="true" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-label">Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="Username" required="true"
+                            value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required="true"
+                            value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-label">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password"
+                            required="true">
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal" id="collections-modal">
+        <button class="modal-close" onclick="collectionsModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body collection-modal">
+                <h4>Collections</h4>
+                <input type="hidden" name="post_id" value="4">
+                <div class="title">Create New Collection</div>
+                <form method="post" class="collection-form">
+                    <div class="form-row">
+                        <div class="left">
+                            <input type="text" name="name" class="form-control" placeholder="Name" autofocus="true">
+                        </div>
+                        <div class="right">
+                            <button type="submit" class="btn btn-theme btn-block">Create</button>
+                        </div>
+                    </div>
+                    <div class="switch-container mt-2">
+                        <label class="switch"><input name="privacy" type="checkbox" value="2">
+                            <span class="switch-button"></span>
+                            <span class="switch-label">Only me</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="trailer-modal">
+        <button class="modal-close" onclick="trailerModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body trailer-modal">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ofkcLgzNZGM"
+                    allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="report-modal">
+        <button class="modal-close" onclick="reportModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body report-modal">
+                <form method="post">
+                    <div class="form-group">
+                        <label class="custom-label">Report</label>
+                        <select name="report_id" class="custom-select" required="true">
+                            <option value="">Report</option>
+                            <option value="1">
+                                The video is not opening </option>
+                            <option value="2">
+                                Subtitle has character issues </option>
+                            <option value="3">
+                                Other </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-label">Description</label>
+                        <textarea name="body" class="form-control"
+                            placeholder="Could you please give some detail about the problem ?"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Mobil Menu Begin -->
     <div class="mobil-menu" id="mobil-menu">
         <div class="mobil-menu-top">
-            <div class="links">
-                <a href="#">Register</a>
-                <a href="#">Login</a>
+            <!-- Auth -->
+            <div class="auth">
+                <div class="links">
+                    <a onclick="registerModalToggle()">Register</a>
+                    <a onclick="loginModalToggle()">Login</a>
+                </div>
+                <ul class="profile" id="auth-profile">
+                    <li class="profile-item dropdown">
+                        <a href="#" class="user-info" onclick="profileToggle()">
+                            <div class="avatar">
+                                <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp" alt="">
+                            </div>
+                            <div class="profile-text">
+                                <div class="profile-head">
+                                    Hello,</div>
+                                <span>
+                                    Aşkın
+                                </span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-profile" id="dropdown-profile">
+                            <a class="dropdown-item" href="#">
+                                Profile</a>
+                            <a class="dropdown-item" href="#">
+                                Collections</a>
+                            <a class="dropdown-item" href="#">
+                                Notifications</a>
+                            <a class="dropdown-item" href="#">
+                                Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <!-- Auth -->
             <div class="menu-close" onclick="menuClose()">
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </div>
+
         <ul>
             <li class="active">
                 <a href="#">
@@ -106,11 +271,9 @@
             <div class="mobilSearchIcon" onclick="searchOpen()">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-
             <form action="">
                 <div class="header-search" id="header-search">
                     <div class="search-field" id="search-field">
-
                         <label for="search-input" class="icon" aria-label="Search">
                             <svg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 <path
@@ -126,12 +289,63 @@
                 <div class="typeahead-backdrop" id="typeahead-backdrop">
                 </div>
             </form>
-
-
-            <div class="header-links">
-                <a href="#">Register</a>
-                <a href="#">Login</a>
+            <!-- Auth -->
+            <div class="auth">
+                <div class="header-links" id="auth-links">
+                    <a onclick="registerModalToggle()">Register</a>
+                    <a onclick="loginModalToggle()">Login</a>
+                </div>
+                <ul class="profile" id="auth-profile">
+                    <li class="profile-item">
+                        <a href="#">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </a>
+                    </li>
+                    <li class="profile-item dropdown">
+                        <a class="notification-btn" id="notification-btn" onclick="notificationToggle()">
+                            <i class="fa-solid fa-bell"></i>
+                        </a>
+                        <div class="dropdown-notification dropdown-menu" id="dropdown-notification">
+                            <div class="notifications">
+                                <div class="text-center">
+                                    Empty Notifications </div>
+                            </div>
+                            <a href="#" class="all">
+                                All
+                            </a>
+                        </div>
+                    </li>
+                    <li class="profile-item dropdown">
+                        <a href="#" class="user-info" onclick="profileToggle()">
+                            <div class="avatar">
+                                <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp" alt="">
+                            </div>
+                            <div class="profile-text">
+                                <div class="profile-head">
+                                    Hello,</div>
+                                <span>
+                                    Aşkın
+                                </span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-profile" id="dropdown-profile">
+                            <a class="dropdown-item" href="#">
+                                Profile</a>
+                            <a class="dropdown-item" href="#">
+                                Collections</a>
+                            <a class="dropdown-item" href="#">
+                                Notifications</a>
+                            <a class="dropdown-item" href="#">
+                                Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <!-- Auth -->
         </div>
         <!-- Header Finish -->
 
@@ -259,6 +473,13 @@
                         </div>
                     </div>
                     <div class="nav-player-social">
+                        <div class="social-collection" onclick="collectionsModalToggle()">
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                <path
+                                    d="M48 0H336C362.5 0 384 21.49 384 48V487.7C384 501.1 373.1 512 359.7 512C354.7 512 349.8 510.5 345.7 507.6L192 400L38.28 507.6C34.19 510.5 29.32 512 24.33 512C10.89 512 0 501.1 0 487.7V48C0 21.49 21.49 0 48 0z" />
+                            </svg>
+                            <span>Collection</span>
+                        </div>
                         <div class="share">
                             <button type="button" class="btn-svg share" onclick="shareDropdownToggle()" role="button"
                                 id="shareDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -277,10 +498,10 @@
                                 </a>
                             </div>
                         </div>
-                        <button type="button" class="report" data-toggle="modal" data-target="#m" data-remote="#">
+                        <div type="button" class="report" onclick="reportModalToggle()">
                             <i class="fa-solid fa-circle-exclamation"></i>
                             <span>Report</span>
-                        </button>
+                        </div>
                     </div>
                 </div>
                 <div class="movie-detail-embed">
@@ -321,7 +542,7 @@
                                     Iron Man
                                 </h2>
                             </div>
-                            <button type="button">
+                            <button type="button" onclick="trailerModalToggle()">
                                 Trailer
                             </button>
                             <div class="video-attr">
@@ -344,161 +565,164 @@
                                 <div class="attr">
                                     Actors </div>
                                 <div class="text" data-more="" data-element="a" data-limit="6">
-                                    <a href="https://demo.codelug.com/wovie/actor/robert-downey-jr-135">
-                                        Robert Downey Jr.</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/terrence-howard-136">
-                                        Terrence Howard</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/jeff-bridges-137">
-                                        Jeff Bridges</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/gwyneth-paltrow-138">
-                                        Gwyneth Paltrow</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/leslie-bibb-139">
-                                        Leslie Bibb</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/bill-smitrovich-140">
-                                        Bill Smitrovich</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/paul-bettany-141" class="toggle"
-                                        style="display: none;">
-                                        Paul Bettany</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/jon-favreau-142" class="toggle"
-                                        style="display: none;">
-                                        Jon Favreau</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/shaun-toub-143" class="toggle"
-                                        style="display: none;">
-                                        Shaun Toub</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/faran-tahir-144" class="toggle"
-                                        style="display: none;">
-                                        Faran Tahir</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/clark-gregg-145" class="toggle"
-                                        style="display: none;">
-                                        Clark Gregg</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/peter-billingsley-146" class="toggle"
-                                        style="display: none;">
-                                        Peter Billingsley</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/sayed-badreya-147" class="toggle"
-                                        style="display: none;">
-                                        Sayed Badreya</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/tim-guinee-148" class="toggle"
-                                        style="display: none;">
-                                        Tim Guinee</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/will-lyman-149" class="toggle"
-                                        style="display: none;">
-                                        Will Lyman</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/marco-khan-150" class="toggle"
-                                        style="display: none;">
-                                        Marco Khan</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/daston-kalili-151" class="toggle"
-                                        style="display: none;">
-                                        Daston Kalili</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/ido-ezra-152" class="toggle"
-                                        style="display: none;">
-                                        Ido Ezra</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/fahim-fazli-153" class="toggle"
-                                        style="display: none;">
-                                        Fahim Fazli</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/tim-rigby-154" class="toggle"
-                                        style="display: none;">
-                                        Tim Rigby</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/nazanin-boniadi-155" class="toggle"
-                                        style="display: none;">
-                                        Nazanin Boniadi</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/stacy-stas-156" class="toggle"
-                                        style="display: none;">
-                                        Stacy Stas</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/lauren-scyphers-157" class="toggle"
-                                        style="display: none;">
-                                        Lauren Scyphers</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/jim-cramer-158" class="toggle"
-                                        style="display: none;">
-                                        Jim Cramer</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/donna-evans-159" class="toggle"
-                                        style="display: none;">
-                                        Donna Evans</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/vladimir-kubr-160" class="toggle"
-                                        style="display: none;">
-                                        Vladimir Kubr</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/javan-tahir-161" class="toggle"
-                                        style="display: none;">
-                                        Javan Tahir</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/sahar-bibiyan-162" class="toggle"
-                                        style="display: none;">
-                                        Sahar Bibiyan</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/adam-harrington-163" class="toggle"
-                                        style="display: none;">
-                                        Adam Harrington</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/meera-simhan-164" class="toggle"
-                                        style="display: none;">
-                                        Meera Simhan</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/ben-newmark-165" class="toggle"
-                                        style="display: none;">
-                                        Ben Newmark</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/ricki-lander-166" class="toggle"
-                                        style="display: none;">
-                                        Ricki Lander</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/sarah-cahill-167" class="toggle"
-                                        style="display: none;">
-                                        Sarah Cahill</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/stan-lee-49" class="toggle"
-                                        style="display: none;">
-                                        Stan Lee</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/zorianna-kit-168" class="toggle"
-                                        style="display: none;">
-                                        Zorianna Kit</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/lana-kinnear-169" class="toggle"
-                                        style="display: none;">
-                                        Lana Kinnear</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/nicole-lindeblad-170" class="toggle"
-                                        style="display: none;">
-                                        Nicole Lindeblad</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/masha-lund-171" class="toggle"
-                                        style="display: none;">
-                                        Masha Lund</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/tim-griffin-172" class="toggle"
-                                        style="display: none;">
-                                        Tim Griffin</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/joshua-harto-173" class="toggle"
-                                        style="display: none;">
-                                        Joshua Harto</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/flavia-manes-rossi-174" class="toggle"
-                                        style="display: none;">
-                                        Flavia Manes Rossi</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/samuel-l-jackson-175" class="toggle"
-                                        style="display: none;">
-                                        Samuel L. Jackson</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/russell-bobbitt-176" class="toggle"
-                                        style="display: none;">
-                                        Russell Bobbitt</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/crystal-marie-denha-177"
-                                        class="toggle" style="display: none;">
-                                        Crystal Marie Denha</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/anthony-martins-178" class="toggle"
-                                        style="display: none;">
-                                        Anthony Martins</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/james-m-myers-179" class="toggle"
-                                        style="display: none;">
-                                        James M. Myers</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/america-olivo-180" class="toggle"
-                                        style="display: none;">
-                                        America Olivo</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/sylvette-ortiz-181" class="toggle"
-                                        style="display: none;">
-                                        Sylvette Ortiz</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/ajani-perkins-182" class="toggle"
-                                        style="display: none;">
-                                        Ajani Perkins</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/toi-rose-183" class="toggle"
-                                        style="display: none;">
-                                        Toi Rose</a>
-                                    <a href="https://demo.codelug.com/wovie/actor/david-zyler-184" class="toggle"
-                                        style="display: none;">
-                                        David Zyler</a>
-                                    <div class="more">Show more</div>
+                                    <div>
+                                        <a href="https://demo.codelug.com/wovie/actor/robert-downey-jr-135">
+                                            Robert Downey Jr.</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/terrence-howard-136">
+                                            Terrence Howard</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/jeff-bridges-137">
+                                            Jeff Bridges</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/gwyneth-paltrow-138">
+                                            Gwyneth Paltrow</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/leslie-bibb-139">
+                                            Leslie Bibb</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/bill-smitrovich-140">
+                                            Bill Smitrovich</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/paul-bettany-141" class="toggle"
+                                            style="display: none;">
+                                            Paul Bettany</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/jon-favreau-142" class="toggle"
+                                            style="display: none;">
+                                            Jon Favreau</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/shaun-toub-143" class="toggle"
+                                            style="display: none;">
+                                            Shaun Toub</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/faran-tahir-144" class="toggle"
+                                            style="display: none;">
+                                            Faran Tahir</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/clark-gregg-145" class="toggle"
+                                            style="display: none;">
+                                            Clark Gregg</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/peter-billingsley-146"
+                                            class="toggle" style="display: none;">
+                                            Peter Billingsley</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/sayed-badreya-147" class="toggle"
+                                            style="display: none;">
+                                            Sayed Badreya</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/tim-guinee-148" class="toggle"
+                                            style="display: none;">
+                                            Tim Guinee</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/will-lyman-149" class="toggle"
+                                            style="display: none;">
+                                            Will Lyman</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/marco-khan-150" class="toggle"
+                                            style="display: none;">
+                                            Marco Khan</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/daston-kalili-151" class="toggle"
+                                            style="display: none;">
+                                            Daston Kalili</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/ido-ezra-152" class="toggle"
+                                            style="display: none;">
+                                            Ido Ezra</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/fahim-fazli-153" class="toggle"
+                                            style="display: none;">
+                                            Fahim Fazli</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/tim-rigby-154" class="toggle"
+                                            style="display: none;">
+                                            Tim Rigby</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/nazanin-boniadi-155"
+                                            class="toggle" style="display: none;">
+                                            Nazanin Boniadi</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/stacy-stas-156" class="toggle"
+                                            style="display: none;">
+                                            Stacy Stas</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/lauren-scyphers-157"
+                                            class="toggle" style="display: none;">
+                                            Lauren Scyphers</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/jim-cramer-158" class="toggle"
+                                            style="display: none;">
+                                            Jim Cramer</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/donna-evans-159" class="toggle"
+                                            style="display: none;">
+                                            Donna Evans</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/vladimir-kubr-160" class="toggle"
+                                            style="display: none;">
+                                            Vladimir Kubr</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/javan-tahir-161" class="toggle"
+                                            style="display: none;">
+                                            Javan Tahir</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/sahar-bibiyan-162" class="toggle"
+                                            style="display: none;">
+                                            Sahar Bibiyan</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/adam-harrington-163"
+                                            class="toggle" style="display: none;">
+                                            Adam Harrington</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/meera-simhan-164" class="toggle"
+                                            style="display: none;">
+                                            Meera Simhan</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/ben-newmark-165" class="toggle"
+                                            style="display: none;">
+                                            Ben Newmark</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/ricki-lander-166" class="toggle"
+                                            style="display: none;">
+                                            Ricki Lander</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/sarah-cahill-167" class="toggle"
+                                            style="display: none;">
+                                            Sarah Cahill</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/stan-lee-49" class="toggle"
+                                            style="display: none;">
+                                            Stan Lee</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/zorianna-kit-168" class="toggle"
+                                            style="display: none;">
+                                            Zorianna Kit</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/lana-kinnear-169" class="toggle"
+                                            style="display: none;">
+                                            Lana Kinnear</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/nicole-lindeblad-170"
+                                            class="toggle" style="display: none;">
+                                            Nicole Lindeblad</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/masha-lund-171" class="toggle"
+                                            style="display: none;">
+                                            Masha Lund</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/tim-griffin-172" class="toggle"
+                                            style="display: none;">
+                                            Tim Griffin</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/joshua-harto-173" class="toggle"
+                                            style="display: none;">
+                                            Joshua Harto</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/flavia-manes-rossi-174"
+                                            class="toggle" style="display: none;">
+                                            Flavia Manes Rossi</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/samuel-l-jackson-175"
+                                            class="toggle" style="display: none;">
+                                            Samuel L. Jackson</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/russell-bobbitt-176"
+                                            class="toggle" style="display: none;">
+                                            Russell Bobbitt</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/crystal-marie-denha-177"
+                                            class="toggle" style="display: none;">
+                                            Crystal Marie Denha</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/anthony-martins-178"
+                                            class="toggle" style="display: none;">
+                                            Anthony Martins</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/james-m-myers-179" class="toggle"
+                                            style="display: none;">
+                                            James M. Myers</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/america-olivo-180" class="toggle"
+                                            style="display: none;">
+                                            America Olivo</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/sylvette-ortiz-181" class="toggle"
+                                            style="display: none;">
+                                            Sylvette Ortiz</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/ajani-perkins-182" class="toggle"
+                                            style="display: none;">
+                                            Ajani Perkins</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/toi-rose-183" class="toggle"
+                                            style="display: none;">
+                                            Toi Rose</a>
+                                        <a href="https://demo.codelug.com/wovie/actor/david-zyler-184" class="toggle"
+                                            style="display: none;">
+                                            David Zyler</a>
+                                    </div>
+                                    <div class="more" id="actors-more-btn" onclick="showMore()">Show more</div>
                                 </div>
                             </div>
                             <div class="video-attr">
                                 <div class="attr">
                                     Overview </div>
                                 <div class="text">
-                                    After being held captive in an Afghan cave, billionaire engineer Tony Stark creates
+                                    After being held captive in an Afghan cave, billionaire engineer Tony Stark
+                                    creates
                                     a unique weaponized suit of armor to fight evil. </div>
                             </div>
                             <div class="nav-social">
@@ -547,24 +771,23 @@
                     <div class="section-heading">
                         <span>Similar content</span>
                     </div>
-                    <div class="list-movie similar-contents">
-
+                    <div class="list-movie">
                         <div class="movie">
-                            <a href="#" class="list-media">
-                                <div class="list-media-attr">
-                                    <div class="play-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                            <path
-                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                                        </svg>
-                                    </div>
-                                    <div class="quality">
-                                        Ultra HD
-                                    </div>
-                                </div>
-                            </a>
                             <div class="list-caption">
                                 <div class="movie-image">
+                                    <a href="#" class="list-media">
+                                        <div class="list-media-attr">
+                                            <div class="play-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                                    <path
+                                                        d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                                </svg>
+                                            </div>
+                                            <div class="quality">
+                                                Ultra HD
+                                            </div>
+                                        </div>
+                                    </a>
                                     <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
                                         alt="">
                                 </div>
@@ -573,28 +796,28 @@
                                         Interstellar
                                     </a>
                                     <a href="" class="movie-title">Interstellar</a>
-                                    <a class="movie-category">
+                                    <a href="" class="movie-category">
                                         2014
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <a href="#" class="list-media">
-                                <div class="list-media-attr">
-                                    <div class="play-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                            <path
-                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                                        </svg>
-                                    </div>
-                                    <div class="quality">
-                                        Ultra HD
-                                    </div>
-                                </div>
-                            </a>
                             <div class="list-caption">
                                 <div class="movie-image">
+                                    <a href="#" class="list-media">
+                                        <div class="list-media-attr">
+                                            <div class="play-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                                    <path
+                                                        d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                                </svg>
+                                            </div>
+                                            <div class="quality">
+                                                Ultra HD
+                                            </div>
+                                        </div>
+                                    </a>
                                     <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
                                         alt="">
                                 </div>
@@ -603,28 +826,28 @@
                                         Interstellar
                                     </a>
                                     <a href="" class="movie-title">Interstellar</a>
-                                    <a class="movie-category">
+                                    <a href="" class="movie-category">
                                         2014
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <a href="#" class="list-media">
-                                <div class="list-media-attr">
-                                    <div class="play-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                            <path
-                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                                        </svg>
-                                    </div>
-                                    <div class="quality">
-                                        Ultra HD
-                                    </div>
-                                </div>
-                            </a>
                             <div class="list-caption">
                                 <div class="movie-image">
+                                    <a href="#" class="list-media">
+                                        <div class="list-media-attr">
+                                            <div class="play-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                                    <path
+                                                        d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                                </svg>
+                                            </div>
+                                            <div class="quality">
+                                                Ultra HD
+                                            </div>
+                                        </div>
+                                    </a>
                                     <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
                                         alt="">
                                 </div>
@@ -633,28 +856,28 @@
                                         Interstellar
                                     </a>
                                     <a href="" class="movie-title">Interstellar</a>
-                                    <a class="movie-category">
+                                    <a href="" class="movie-category">
                                         2014
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <a href="#" class="list-media">
-                                <div class="list-media-attr">
-                                    <div class="play-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                            <path
-                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                                        </svg>
-                                    </div>
-                                    <div class="quality">
-                                        Ultra HD
-                                    </div>
-                                </div>
-                            </a>
                             <div class="list-caption">
                                 <div class="movie-image">
+                                    <a href="#" class="list-media">
+                                        <div class="list-media-attr">
+                                            <div class="play-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                                    <path
+                                                        d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                                </svg>
+                                            </div>
+                                            <div class="quality">
+                                                Ultra HD
+                                            </div>
+                                        </div>
+                                    </a>
                                     <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
                                         alt="">
                                 </div>
@@ -663,28 +886,28 @@
                                         Interstellar
                                     </a>
                                     <a href="" class="movie-title">Interstellar</a>
-                                    <a class="movie-category">
+                                    <a href="" class="movie-category">
                                         2014
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="movie">
-                            <a href="#" class="list-media">
-                                <div class="list-media-attr">
-                                    <div class="play-btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                            <path
-                                                d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                                        </svg>
-                                    </div>
-                                    <div class="quality">
-                                        Ultra HD
-                                    </div>
-                                </div>
-                            </a>
                             <div class="list-caption">
                                 <div class="movie-image">
+                                    <a href="#" class="list-media">
+                                        <div class="list-media-attr">
+                                            <div class="play-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                                    <path
+                                                        d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+                                                </svg>
+                                            </div>
+                                            <div class="quality">
+                                                Ultra HD
+                                            </div>
+                                        </div>
+                                    </a>
                                     <img src="https://demo.codelug.com/wovie/public/upload/cover/thumb-interstellar.webp"
                                         alt="">
                                 </div>
@@ -693,7 +916,7 @@
                                         Interstellar
                                     </a>
                                     <a href="" class="movie-title">Interstellar</a>
-                                    <a class="movie-category">
+                                    <a href="" class="movie-category">
                                         2014
                                     </a>
                                 </div>
@@ -707,6 +930,32 @@
                             Comments
                         </span>
                     </div>
+                    <form method="POST" class="post-form">
+                        <div class="postbox">
+                            <div class="comment-form">
+                                <div class="comment-avatar">
+                                    <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp" alt="">
+                                </div>
+                                <div class="comment-content">
+                                    <div class="form-comment">
+                                        <textarea name="comment" class="form-control" rows="1" wrap="hard"
+                                            maxlength="500" placeholder="Comment"></textarea>
+                                        <div class="character-count">500</div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="checkbox" name="spoiler" value="1" class="custom-control-input"
+                                                id="spoiler">
+                                            <label class="custom-control-label" for="spoiler">Does this comment contain
+                                                information, tips or details about the content ?</label>
+                                        </div>
+                                        <button type="submit" class="btn" data-loading-text="Loading ..">Write
+                                            Comment</button>
+                                        <div class="cancel"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="response"></div>
+                        </div>
+                    </form>
                     <div class="comments">
                         <div class="comment-warning">
                             The comment field is only for members.
@@ -714,7 +963,7 @@
                             <a href="#">Register</a>
                         </div>
                         <div class="comment-info">
-                            <div class="comment-total">2 Comment</div>
+                            <div class="comment-total">3 Comment</div>
                             <div class="comment-sort">
                                 <button type="button" class="btn btn-sm dropdown-toggle"
                                     onclick="commentSortDropdownToggle()">
@@ -727,21 +976,67 @@
                                 </ul>
                             </div>
                         </div>
-                        <ul class="list-comments" style="">
+                        <ul class="list-comments">
+                            <li class="list-comment ">
+                                <div class="list-comment-content">
+                                    <div class="list-avatar">
+                                        <a href="https://demo.codelug.com/wovie/profile/gokyildiz" target="_blank">
+                                            <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="list-body"> <a href="https://demo.codelug.com/wovie/profile/gokyildiz"
+                                            target="_blank" class="list-name">Gök123 1</a> <a href="#!comment=14"
+                                            class="list-date">
+                                            <time title="4 hour ago">12 hour ago</time> </a>
+                                        <div class="text">test 123123123</div>
+                                        <form method="POST" class="edit-form comment-form">
+                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard=""
+                                                maxlength=" 500" data-content="test 123123123"
+                                                placeholder="Yorum"></textarea>
+                                            <div class="comment-btn"> <button type="submit" class="btn btn-theme"
+                                                    data-loading-text="..">Edit</button> <button type="button"
+                                                    class="btn cancel">Cancel</button> </div>
+                                            <div class="response"></div>
+                                        </form>
+                                        <div class="list-comment-footer">
+                                            <div class="votes"> <a href="#" title="Beğen" class="like ">
+                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M128 447.1V223.1c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 479.1 128 465.6 128 447.1zM512 224.1c0-26.5-21.48-47.98-48-47.98h-146.5c22.77-37.91 34.52-80.88 34.52-96.02C352 56.52 333.5 32 302.5 32c-63.13 0-26.36 76.15-108.2 141.6L178 186.6C166.2 196.1 160.2 210 160.1 224c-.0234 .0234 0 0 0 0L160 384c0 15.1 7.113 29.33 19.2 38.39l34.14 25.59C241 468.8 274.7 480 309.3 480H368c26.52 0 48-21.47 48-47.98c0-3.635-.4805-7.143-1.246-10.55C434 415.2 448 397.4 448 376c0-9.148-2.697-17.61-7.139-24.88C463.1 347 480 327.5 480 304.1c0-12.5-4.893-23.78-12.72-32.32C492.2 270.1 512 249.5 512 224.1z" />
+                                                    </svg>
+                                                    <span class="likes" data-votes="0"> </span> </a> <a href="#"
+                                                    title="Beğenme" class="dislike ">
+                                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
+                                                    </svg>
+                                                    <span class="dislikes" data-votes="0"> </span> </a> </div> <a
+                                                href="#" class="reply" data-parent="14" data-root="14">Reply</a>
+                                        </div>
+                                        <div class="replybox"></div>
+                                    </div>
+                                </div>
+                                <ul class="list-comments children" data-parent="14"></ul>
+                            </li>
                             <li class="list-comment " data-id="14">
                                 <div class="list-comment-content">
-                                    <div class="list-avatar"> <a href="https://demo.codelug.com/wovie/profile/gokyildiz"
-                                            target="_blank">
-                                            <div class="avatar avatar-sm" style="">A</div>
-                                        </a> </div>
+                                    <div class="list-avatar">
+                                        <a href="https://demo.codelug.com/wovie/profile/gokyildiz" target="_blank">
+                                            <div class="avatar">
+                                                A
+                                            </div>
+                                        </a>
+                                    </div>
                                     <div class="list-body"> <a href="https://demo.codelug.com/wovie/profile/gokyildiz"
                                             target="_blank" class="list-name">gokyildiz</a> <a href="#!comment=14"
                                             class="list-date"> <time title="4 hour ago">4 hour ago</time> </a>
                                         <div class="text">Test deneme 12345</div>
-                                        <form method="POST" class="edit-form comment-form"> <input type="hidden"
-                                                name="id" value="14"> <input type="hidden" name="action" value="update">
-                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard"=""
-                                                maxlength="500" data-content="Test deneme 12345"
+                                        <form method="POST" class="edit-form comment-form">
+                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard=""
+                                                maxlength=" 500" data-content="Test deneme 12345"
                                                 placeholder="Yorum"></textarea>
                                             <div class="comment-btn"> <button type="submit" class="btn btn-theme"
                                                     data-loading-text="..">Edit</button> <button type="button"
@@ -782,12 +1077,10 @@
                                         <div class="text">Heej
 
                                             :D :) no smile</div>
-                                        <form method="POST" class="edit-form comment-form"> <input type="hidden"
-                                                name="id" value="6"> <input type="hidden" name="action" value="update">
-                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard"=""
-                                                maxlength="500" data-content="Heej
-
-:D :) no smile" placeholder="Yorum"></textarea>
+                                        <form method="POST" class="edit-form comment-form">
+                                            <textarea name="comment" class="form-control mb-2" rows="1 wrap=" hard=""
+                                                maxlength="500" data-content="Heej:D :) no smile"
+                                                placeholder="Yorum"></textarea>
                                             <div class="comment-btn"> <button type="submit" class="btn btn-theme"
                                                     data-loading-text="..">Edit</button> <button type="button"
                                                     class="btn cancel">Cancel</button> </div>
@@ -826,12 +1119,10 @@
                                                     class="list-name">Gök123</a> <a href="#!comment=13"
                                                     class="list-date"> <time title="4 hour ago">4 hour ago</time> </a>
                                                 <div class="text">test :) xdxdxd</div>
-                                                <form method="POST" class="edit-form comment-form"> <input type="hidden"
-                                                        name="id" value="13"> <input type="hidden" name="action"
-                                                        value="update"> <textarea name="comment"
-                                                        class="form-control mb-2" rows="1 wrap=" hard"=""
-                                                        maxlength="500" data-content="test :) xdxdxd"
-                                                        placeholder="Yorum"></textarea>
+                                                <form method="POST" class="edit-form comment-form">
+                                                    value="update"> <textarea name="comment" class="form-control mb-2"
+                                                        rows="1 wrap=" hard"="" maxlength="500"
+                                                        data-content="test :) xdxdxd" placeholder="Yorum"></textarea>
                                                     <div class="comment-btn"> <button type="submit"
                                                             class="btn btn-theme" data-loading-text="..">Edit</button>
                                                         <button type="button" class="btn cancel">Cancel</button>
@@ -852,7 +1143,8 @@
                                                                 <path
                                                                     d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
                                                             </svg>
-                                                            <span class="dislikes" data-votes="0"> </span> </a> </div>
+                                                            <span class="dislikes" data-votes="0"> </span> </a>
+                                                    </div>
                                                     <a href="#" class="reply" data-parent="14" data-root="14">Reply</a>
                                                 </div>
                                                 <div class="replybox"></div>
@@ -873,10 +1165,8 @@
                                                     href="#!comment=15" class="list-date"> <time title="4 hour ago">4
                                                         hour ago</time> </a>
                                                 <div class="text">Test 123123123</div>
-                                                <form method="POST" class="edit-form comment-form"> <input type="hidden"
-                                                        name="id" value="15"> <input type="hidden" name="action"
-                                                        value="update"> <textarea name="comment"
-                                                        class="form-control mb-2" rows="1 wrap=" hard"=""
+                                                <form method="POST" class="edit-form comment-form"><textarea
+                                                        name="comment" class="form-control mb-2" rows="1 wrap=" hard"=""
                                                         maxlength="500" data-content="Test 123123123"
                                                         placeholder="Yorum"></textarea>
                                                     <div class="comment-btn"> <button type="submit"
@@ -899,7 +1189,8 @@
                                                                 <path
                                                                     d="M96 32.04H32c-17.67 0-32 14.32-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V64.03C128 46.36 113.7 32.04 96 32.04zM467.3 240.2C475.1 231.7 480 220.4 480 207.9c0-23.47-16.87-42.92-39.14-47.09C445.3 153.6 448 145.1 448 135.1c0-21.32-14-39.18-33.25-45.43C415.5 87.12 416 83.61 416 79.98C416 53.47 394.5 32 368 32h-58.69c-34.61 0-68.28 11.22-95.97 31.98L179.2 89.57C167.1 98.63 160 112.9 160 127.1l.1074 160c0 0-.0234-.0234 0 0c.0703 13.99 6.123 27.94 17.91 37.36l16.3 13.03C276.2 403.9 239.4 480 302.5 480c30.96 0 49.47-24.52 49.47-48.11c0-15.15-11.76-58.12-34.52-96.02H464c26.52 0 48-21.47 48-47.98C512 262.5 492.2 241.9 467.3 240.2z" />
                                                             </svg>
-                                                            <span class="dislikes" data-votes="0"> </span> </a> </div>
+                                                            <span class="dislikes" data-votes="0"> </span> </a>
+                                                    </div>
                                                     <a href="#" class="reply" data-parent="14" data-root="14">Reply</a>
                                                 </div>
                                                 <div class="replybox"></div>

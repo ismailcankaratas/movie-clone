@@ -42,7 +42,7 @@
                         <a href="#">Forgot password</a>
                     </div>
                     <div class="submit-btn">
-                        <button type="submit" onclick="auth()">Login</button>
+                        <button type="submit">Login</button>
                     </div>
                 </form>
             </div>
@@ -87,13 +87,13 @@
         <div class="mobil-menu-top">
             <!-- Auth -->
             <div class="auth">
-                <div class="header-links" id="mobil-auth-links">
+                <div class="links">
                     <a onclick="registerModalToggle()">Register</a>
                     <a onclick="loginModalToggle()">Login</a>
                 </div>
-                <ul class="profile" id="mobil-auth-profile">
-                    <li class="profile-item user">
-                        <a href="#" class="user-info">
+                <ul class="profile" id="auth-profile">
+                    <li class="profile-item dropdown">
+                        <a href="#" class="user-info" onclick="profileToggle()">
                             <div class="avatar">
                                 <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp" alt="">
                             </div>
@@ -105,21 +105,20 @@
                                 </span>
                             </div>
                         </a>
-                        <!-- <div class="dropdown-menu dropdown-menu-right dropdown-profile"
-                            aria-labelledby="Dropdown Profile">
-                            <a class="dropdown-item" href="https://demo.codelug.com/wovie/profile/Gök123">
+                        <div class="dropdown-menu dropdown-profile" id="dropdown-profile">
+                            <a class="dropdown-item" href="#">
                                 Profile</a>
-                            <a class="dropdown-item d-flex"
-                                href="https://demo.codelug.com/wovie/profile/Gök123#collections">
+                            <a class="dropdown-item" href="#">
                                 Collections</a>
-                            <a class="dropdown-item" href="https://demo.codelug.com/wovie/notifications">
+                            <a class="dropdown-item" href="#">
                                 Notifications</a>
-                            <a class="dropdown-item" href="https://demo.codelug.com/wovie/settings">
+                            <a class="dropdown-item" href="#">
                                 Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://demo.codelug.com/wovie/logout">
-                                Logout</a>
-                        </div> -->
+                            <a class="dropdown-item" href="#">
+                                Logout
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -128,6 +127,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
         </div>
+
         <ul>
             <li class="active">
                 <a href="#">

@@ -13,6 +13,11 @@ const typeaheadBackdrop = document.getElementById("typeahead-backdrop");
 
 const loginModal = document.getElementById("login-modal");
 const registerModal = document.getElementById("register-modal");
+const collectionsModal = document.getElementById("collections-modal");
+const trailerModal = document.getElementById("trailer-modal");
+const reportModal = document.getElementById("report-modal");
+
+
 const authProfile = document.getElementById("auth-profile");
 const authLinks = document.getElementById("auth-links");
 const mobilAuthLinks = document.getElementById("mobil-auth-links");
@@ -138,17 +143,17 @@ function loginModalToggle() {
 function registerModalToggle() {
     toggle(registerModal, "flex")
 }
-
-
-function auth() {
-    loginModal.style.display = "none";
-
-    authLinks.style.display = "none";
-    mobilAuthLinks.style.display = "none";
-
-    authProfile.style.display = "flex";
-    mobilAuthProfile.style.display = "flex";
+function collectionsModalToggle() {
+    toggle(collectionsModal, "flex")
 }
+function trailerModalToggle() {
+    toggle(trailerModal, "flex")
+}
+function reportModalToggle() {
+    toggle(reportModal, "flex")
+}
+
+
 
 function notificationToggle() {
     dropdownPofile.style.display = "none";
