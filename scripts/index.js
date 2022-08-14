@@ -20,7 +20,18 @@ const mobilAuthProfile = document.getElementById("mobil-auth-profile");
 
 const dropdownNotification = document.getElementById("dropdown-notification");
 const dropdownPofile = document.getElementById("dropdown-profile");
+const notificationBtn = document.getElementById("notification-btn");
 
+window.addEventListener('click', function (event) {
+    var isClickInsideProfile = authProfile.contains(event.target);
+    var isClickInsideNotification = notificationBtn.contains(event.target);
+    if (!isClickInsideProfile) {
+        dropdownPofile.style.display = "none"
+    }
+    if (!isClickInsideNotification) {
+        dropdownNotification.style.display = "none"
+    }
+});
 
 window.addEventListener('scroll', function () {
     if (window.scrollY >= 100) {
@@ -140,10 +151,12 @@ function auth() {
 }
 
 function notificationToggle() {
+    dropdownPofile.style.display = "none";
     toggle(dropdownNotification, "block")
 }
 
 function profileToggle() {
+    dropdownNotification.style.display = "none";
     toggle(dropdownPofile, "flex")
 }
 
