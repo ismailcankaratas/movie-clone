@@ -82,6 +82,96 @@
             </div>
         </div>
     </div>
+
+    <div class="modal" id="bookmark-modal">
+        <button class="modal-close" onclick="bookmarkModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="user-profile">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <div class="avatar"></div>
+                            <svg x="0px" y="0px" width="36px" height="36px" viewBox="0 0 36 36">
+                                <circle fill="none" stroke-width="1" cx="18" cy="18" r="16" stroke-dasharray="100 100"
+                                    stroke-dashoffset="0" transform="rotate(-90 18 18)">
+                                </circle>
+                            </svg>
+                        </div>
+                        <div class="profile-content">
+                            <div class="name">
+                                Aşkın
+                            </div>
+                            <div class="username">
+                                @Gök123
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-tab">
+                        <div class="nav-active-border">
+                            <ul>
+                                <li>
+                                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general"
+                                        role="tab" aria-controls="general" aria-selected="true">
+                                        Overview</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link " id="collections-tab" data-toggle="tab" href="#collections"
+                                        role="tab" aria-controls="collections" aria-selected="false">
+                                        Collections</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link " id="discussions-tab" data-toggle="tab" href="#discussions"
+                                        role="tab" aria-controls="discussions" aria-selected="false">
+                                        Discussions</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link " id="following-tab" data-toggle="tab" href="#following"
+                                        role="tab" aria-controls="following" aria-selected="false">
+                                        Following</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                            <div class="tab-profile">
+                                <div class="title">
+                                    <div class="profile-heading">
+                                        About
+                                    </div>
+                                </div>
+                                <div class="tab-tabe-content">
+                                    <div class="profile-box">
+                                        <div class="profile-heading">
+                                            Liked Content
+                                        </div>
+                                        <div class="row row-cols-6 list-scrollable">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="collections" role="tabpanel" aria-labelledby="collections-tab">
+                            <div class="row row-cols-lg-3 row-cols-md-2 list-grouped">
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="discussions" role="tabpanel" aria-labelledby="discussions-tab">
+                        </div>
+                        <div class="tab-pane " id="following" role="tabpanel" aria-labelledby="following-tab">
+                            <div class="profile-box">
+                                <div class="profile-heading">
+                                    Following Contents </div>
+                                <div class="row row-cols-6 list-scrollable">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Mobil Menu Begin -->
     <div class="mobil-menu" id="mobil-menu">
         <div class="mobil-menu-top">
@@ -91,9 +181,9 @@
                     <a onclick="registerModalToggle()">Register</a>
                     <a onclick="loginModalToggle()">Login</a>
                 </div>
-                <ul class="profile" id="auth-profile">
+                <ul class="profile" id="mobil-auth-profile">
                     <li class="profile-item dropdown">
-                        <a href="#" class="user-info" onclick="profileToggle()">
+                        <a href="#" class="user-info" onclick="mobilDropdownProfileToggle()">
                             <div class="avatar">
                                 <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp" alt="">
                             </div>
@@ -105,7 +195,7 @@
                                 </span>
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-profile" id="dropdown-profile">
+                        <div class="dropdown-menu dropdown-profile" id="mobil-dropdown-profile">
                             <a class="dropdown-item" href="#">
                                 Profile</a>
                             <a class="dropdown-item" href="#">
@@ -232,7 +322,7 @@
                     <a onclick="loginModalToggle()">Login</a>
                 </div>
                 <ul class="profile" id="auth-profile">
-                    <li class="profile-item">
+                    <li class="profile-item" onclick="bookmarkModalToggle()">
                         <a href="#">
                             <i class="fa-solid fa-bookmark"></i>
                         </a>

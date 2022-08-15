@@ -16,6 +16,7 @@ const registerModal = document.getElementById("register-modal");
 const collectionsModal = document.getElementById("collections-modal");
 const trailerModal = document.getElementById("trailer-modal");
 const reportModal = document.getElementById("report-modal");
+const bookmarkModal = document.getElementById("bookmark-modal");
 
 
 const authProfile = document.getElementById("auth-profile");
@@ -25,6 +26,7 @@ const mobilAuthProfile = document.getElementById("mobil-auth-profile");
 
 const dropdownNotification = document.getElementById("dropdown-notification");
 const dropdownPofile = document.getElementById("dropdown-profile");
+const mobilDropdownProfile = document.getElementById("mobil-dropdown-profile");
 const notificationBtn = document.getElementById("notification-btn");
 
 window.addEventListener('click', function (event) {
@@ -153,6 +155,9 @@ function reportModalToggle() {
     toggle(reportModal, "flex")
 }
 
+function bookmarkModalToggle() {
+    toggle(bookmarkModal, "flex")
+}
 
 
 function notificationToggle() {
@@ -163,6 +168,10 @@ function notificationToggle() {
 function profileToggle() {
     dropdownNotification.style.display = "none";
     toggle(dropdownPofile, "flex")
+}
+function mobilDropdownProfileToggle() {
+    dropdownNotification.style.display = "none";
+    toggle(mobilDropdownProfile, "flex")
 }
 
 function toggle(element, display) {
