@@ -164,12 +164,12 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
 
 .movie-detail-embed .embed {
     flex: 1;
-    height: 75vh;
 }
 
 .movie-detail-embed .embed iframe {
     width: 100%;
     height: 100%;
+    aspect-ratio: 2 / 1.1;
     border-radius: 6px;
 }
 
@@ -190,52 +190,64 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
 /*=================================================================*/
 /*                      Movide Detail Text Styles                          
 /*=================================================================*/
-.movie-detail-content {
+.movie-detail-content a {
     display: flex;
-    gap: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.movie-detail-content .movie-image {
+.movie-detail-content a img {
+    border-radius: 6px;
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-detail-content .movie-detail {
+    display: flex;
+}
+
+.movie-detail-content .movie-detail .movie-image {
     flex: 0 0 100px;
     max-width: 100px;
 }
 
-.movie-detail-content .movie-image img {
+.movie-detail-content .movie-detail .movie-image img {
     max-width: 100%;
     border-radius: 6px;
     background-color: #101010;
 }
 
-.movie-detail-content .movie-detail-text {
+.movie-detail-content .movie-detail .movie-detail-text {
     display: flex;
+    padding-left: 30px;
 }
 
-.movie-detail-content .movie-detail-text .caption {
+.movie-detail-content .movie-detail .movie-detail-text .caption {
     flex: 1 1 auto;
     max-width: 100%;
 }
 
-.movie-detail-content .movie-detail-text .caption .caption-content .category {
+.movie-detail-content .movie-detail .movie-detail-text .caption .caption-content .category {
     display: flex;
     align-items: center;
     gap: 1rem;
     font-size: .8rem;
 }
 
-.movie-detail-content .movie-detail-text .caption h1 {
+.movie-detail-content .movie-detail .movie-detail-text .caption h1 {
     font-size: 18px;
     color: #fff;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
-.movie-detail-content .movie-detail-text .caption h2 {
+.movie-detail-content .movie-detail .movie-detail-text .caption h2 {
     font-size: 14px;
     margin-bottom: 5px px;
     font-weight: 400;
 }
 
-.movie-detail-content .movie-detail-text .caption button {
+.movie-detail-content .movie-detail .movie-detail-text .caption button {
     background-color: var(--color-bg-variant);
     color: var(--color-light);
     padding: 1rem 3rem;
@@ -246,51 +258,51 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
     cursor: pointer;
 }
 
-.movie-detail-content .movie-detail-text .caption button:hover {
+.movie-detail-content .movie-detail .movie-detail-text .caption button:hover {
     background-color: var(--color-primary);
     color: white;
 }
 
-.movie-detail-content .movie-detail-text .caption .video-attr {
+.movie-detail-content .movie-detail .movie-detail-text .caption .video-attr {
     margin: 5px 0;
     font-size: 12px;
     display: flex;
 }
 
-.movie-detail-content .movie-detail-text .caption .video-attr .attr {
+.movie-detail-content .movie-detail .movie-detail-text .caption .video-attr .attr {
     color: #9999a5;
     margin-bottom: 5px;
     flex: 0 0 100px;
     max-width: 100px;
 }
 
-.movie-detail-content .movie-detail-text .caption .video-attr .text {
+.movie-detail-content .movie-detail .movie-detail-text .caption .video-attr .text {
     display: flex;
     flex-direction: column;
     color: var(--color-light);
 }
 
-.movie-detail-content .movie-detail-text .caption .video-attr .text div {
+.movie-detail-content .movie-detail .movie-detail-text .caption .video-attr .text div {
     display: flex;
     flex-wrap: wrap;
     gap: .2rem;
 }
 
-.movie-detail-content .movie-detail-text .caption .video-attr .more {
+.movie-detail-content .movie-detail .movie-detail-text .caption .video-attr .more {
     cursor: pointer;
     color: var(--color-light-variant);
 }
 
-.movie-detail-content .movie-detail-text .caption .video-attr .more:hover {
+.movie-detail-content .movie-detail .movie-detail-text .caption .video-attr .more:hover {
     color: var(--color-primary);
 }
 
-.movie-detail-content .action {
+.movie-detail-content .movie-detail .action {
     flex: 0 0 140px;
     margin: 1rem;
 }
 
-.movie-detail-content .action .video-view .view-text {
+.movie-detail-content .movie-detail .action .video-view .view-text {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -298,11 +310,11 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
     color: var(--color-light);
 }
 
-.movie-detail-content .action .video-view span {
+.movie-detail-content .movie-detail .action .video-view span {
     font-size: .8rem;
 }
 
-.movie-detail-content .action .action-bar {
+.movie-detail-content .movie-detail .action .action-bar {
     background-color: #101010;
     height: 6px;
     margin: 0.5rem 0;
@@ -310,24 +322,24 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
     display: flex;
 }
 
-.movie-detail-content .action .action-bar span {
+.movie-detail-content .movie-detail .action .action-bar span {
     background-color: var(--color-primary);
     height: 100%;
     border-radius: 10px;
     display: inline-block;
 }
 
-.movie-detail-content .action .action-btns {
+.movie-detail-content .movie-detail .action .action-btns {
     display: flex;
     justify-content: flex-end;
 }
 
-.movie-detail-content .action .action-btn {
+.movie-detail-content .movie-detail .action .action-btn {
     margin-left: 20px;
     display: flex;
 }
 
-.movie-detail-content .action .action-btn svg {
+.movie-detail-content .movie-detail .action .action-btn svg {
     width: 20px;
     height: 20px;
     stroke: #b5b5be;
@@ -336,11 +348,11 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
     cursor: pointer;
 }
 
-.movie-detail-content .action .action-btn:hover svg {
+.movie-detail-content .movie-detail .action .action-btn:hover svg {
     fill: var(--color-primary);
 }
 
-.movie-detail-content .action .action-btn span {
+.movie-detail-content .movie-detail .action .action-btn span {
     margin-left: 10px;
     font-size: 12px;
     font-weight: 500;
@@ -697,13 +709,14 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
 /*=================================================================*/
 
 @media (max-width: 768px) {
-    .movie-detail-content .movie-image {
+    .movie-detail-content .movie-detail .movie-image {
         flex: 0 0 80px;
         max-width: 80px;
     }
 
-    .movie-detail-content .movie-detail-text {
+    .movie-detail-content .movie-detail .movie-detail-text {
         flex-direction: column;
+        padding-left: 20px;
     }
 
     .caption-content .category {
@@ -718,10 +731,12 @@ nav .breadcrumb .breadcrumb-item+.breadcrumb-item:before {
         display: none;
     }
 
-    .movie-detail-embed .embed {
-        width: 100%;
-        height: auto;
+    .video-attr {
+        flex-direction: column;
     }
 
-
+    .video-attr .attr {
+        flex: auto !important;
+        max-width: 100% !important;
+    }
 }

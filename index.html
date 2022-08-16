@@ -22,7 +22,7 @@
             <img src="https://demo.codelug.com/wovie/public/upload/ads/bottom-fixed-ads.webp" alt="Reklam">
         </a>
     </div>
-    <div class="modal" id="login-modal">
+    <div class="modal" id="login-modal" style="display: none;">
         <button class="modal-close" onclick="loginModalToggle()">
             <i class="fa-solid fa-xmark"></i>
         </button>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="modal" id="register-modal">
+    <div class="modal" id="register-modal" style="display: none;">
         <button class="modal-close" onclick="registerModalToggle()">
             <i class="fa-solid fa-xmark"></i>
         </button>
@@ -82,8 +82,7 @@
             </div>
         </div>
     </div>
-
-    <div class="modal" id="bookmark-modal">
+    <div class="modal" id="bookmark-modal" style="display: none;">
         <button class="modal-close" onclick="bookmarkModalToggle()">
             <i class="fa-solid fa-xmark"></i>
         </button>
@@ -111,23 +110,23 @@
                     <div class="profile-tab">
                         <div class="nav-active-border">
                             <ul>
-                                <li>
-                                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general"
+                                <li onclick="bookmarkTab('general')">
+                                    <a class="nav-link active" id="general-nav" data-toggle="tab" href="#general"
                                         role="tab" aria-controls="general" aria-selected="true">
                                         Overview</a>
                                 </li>
-                                <li>
-                                    <a class="nav-link " id="collections-tab" data-toggle="tab" href="#collections"
+                                <li onclick="bookmarkTab('collections')">
+                                    <a class="nav-link " id="collections-nav" data-toggle="tab" href="#collections"
                                         role="tab" aria-controls="collections" aria-selected="false">
                                         Collections</a>
                                 </li>
-                                <li>
-                                    <a class="nav-link " id="discussions-tab" data-toggle="tab" href="#discussions"
+                                <li onclick="bookmarkTab('discussions')">
+                                    <a class="nav-link " id="discussions-nav" data-toggle="tab" href="#discussions"
                                         role="tab" aria-controls="discussions" aria-selected="false">
                                         Discussions</a>
                                 </li>
-                                <li>
-                                    <a class="nav-link " id="following-tab" data-toggle="tab" href="#following"
+                                <li onclick="bookmarkTab('following')">
+                                    <a class="nav-link " id="following-nav" data-toggle="tab" href="#following"
                                         role="tab" aria-controls="following" aria-selected="false">
                                         Following</a>
                                 </li>
@@ -135,7 +134,7 @@
                         </div>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                        <div class="tab-pane active" id="tab-general" role="tabpanel" aria-labelledby="general-tab">
                             <div class="tab-profile">
                                 <div class="title">
                                     <div class="profile-heading">
@@ -153,17 +152,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane " id="collections" role="tabpanel" aria-labelledby="collections-tab">
-                            <div class="row row-cols-lg-3 row-cols-md-2 list-grouped">
+                        <div class="tab-pane " id="tab-collections" role="tabpanel" aria-labelledby="collections-tab">
+                            <div class="tab-profile">
+                                <div class="title">
+                                    <div class="profile-heading">
+                                        Collections
+                                    </div>
+                                </div>
+                                <div class="tab-tabe-content">
+                                    <div class="profile-box">
+                                        <div class="profile-heading">
+                                        </div>
+                                        <div class="row row-cols-6 list-scrollable">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane " id="discussions" role="tabpanel" aria-labelledby="discussions-tab">
+                        <div class="tab-pane " id="tab-discussions" role="tabpanel" aria-labelledby="discussions-tab">
+                            <div class="tab-profile">
+                                <div class="title">
+                                    <div class="profile-heading">
+                                        Discussions
+                                    </div>
+                                </div>
+                                <div class="tab-tabe-content">
+                                    <div class="profile-box">
+                                        <div class="profile-heading">
+                                        </div>
+                                        <div class="row row-cols-6 list-scrollable">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane " id="following" role="tabpanel" aria-labelledby="following-tab">
-                            <div class="profile-box">
-                                <div class="profile-heading">
-                                    Following Contents </div>
-                                <div class="row row-cols-6 list-scrollable">
+                        <div class="tab-pane " id="tab-following" role="tabpanel" aria-labelledby="following-tab">
+                            <div class="tab-profile">
+                                <div class="title">
+                                    <div class="profile-heading">
+                                        Following
+                                    </div>
+                                </div>
+                                <div class="tab-tabe-content">
+                                    <div class="profile-box">
+                                        <div class="profile-heading">
+                                        </div>
+                                        <div class="row row-cols-6 list-scrollable">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +359,7 @@
                 </div>
                 <ul class="profile" id="auth-profile">
                     <li class="profile-item" onclick="bookmarkModalToggle()">
-                        <a href="#">
+                        <a>
                             <i class="fa-solid fa-bookmark"></i>
                         </a>
                     </li>
@@ -331,7 +367,8 @@
                         <a class="notification-btn" id="notification-btn" onclick="notificationToggle()">
                             <i class="fa-solid fa-bell"></i>
                         </a>
-                        <div class="dropdown-notification dropdown-menu" id="dropdown-notification">
+                        <div class="dropdown-notification dropdown-menu" id="dropdown-notification"
+                            style="display: none;">
                             <div class="notifications">
                                 <div class="text-center">
                                     Empty Notifications </div>
@@ -354,7 +391,7 @@
                                 </span>
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-profile" id="dropdown-profile">
+                        <div class="dropdown-menu dropdown-profile" id="dropdown-profile" style="display: none;">
                             <a class="dropdown-item" href="#">
                                 Profile</a>
                             <a class="dropdown-item" href="#">

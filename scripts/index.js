@@ -29,6 +29,15 @@ const dropdownPofile = document.getElementById("dropdown-profile");
 const mobilDropdownProfile = document.getElementById("mobil-dropdown-profile");
 const notificationBtn = document.getElementById("notification-btn");
 
+const tabGeneral = document.getElementById("tab-general");
+const navGeneral = document.getElementById("general-nav");
+const tabCollections = document.getElementById("tab-collections");
+const navCollections = document.getElementById("collections-nav");
+const tabDiscussions = document.getElementById("tab-discussions");
+const navDiscussions = document.getElementById("discussions-nav");
+const tabFollowing = document.getElementById("tab-following");
+const navFollowing = document.getElementById("following-nav");
+
 window.addEventListener('click', function (event) {
     var isClickInsideProfile = authProfile.contains(event.target);
     var isClickInsideNotification = notificationBtn.contains(event.target);
@@ -157,6 +166,56 @@ function reportModalToggle() {
 
 function bookmarkModalToggle() {
     toggle(bookmarkModal, "flex")
+}
+
+function bookmarkTab(tabName) {
+    if (tabName == "general") {
+        tabGeneral.classList.add("active");
+        navGeneral.classList.add("active");
+
+        tabCollections.classList.remove("active");
+        navCollections.classList.remove("active");
+        tabDiscussions.classList.remove("active");
+        navDiscussions.classList.remove("active");
+        tabFollowing.classList.remove("active");
+        navFollowing.classList.remove("active");
+    }
+
+    if (tabName == "collections") {
+        tabCollections.classList.add("active");
+        navCollections.classList.add("active");
+
+        tabGeneral.classList.remove("active");
+        navGeneral.classList.remove("active");
+        tabDiscussions.classList.remove("active");
+        navDiscussions.classList.remove("active");
+        tabFollowing.classList.remove("active");
+        navFollowing.classList.remove("active");
+    }
+
+    if (tabName == "discussions") {
+        tabDiscussions.classList.add("active");
+        navDiscussions.classList.add("active");
+
+        tabGeneral.classList.remove("active");
+        navGeneral.classList.remove("active");
+        tabCollections.classList.remove("active");
+        navCollections.classList.remove("active");
+        tabFollowing.classList.remove("active");
+        navFollowing.classList.remove("active");
+    }
+
+    if (tabName == "following") {
+        tabFollowing.classList.add("active");
+        navFollowing.classList.add("active");
+
+        tabGeneral.classList.remove("active");
+        navGeneral.classList.remove("active");
+        tabCollections.classList.remove("active");
+        navCollections.classList.remove("active");
+        tabDiscussions.classList.remove("active");
+        navDiscussions.classList.remove("active");
+    }
 }
 
 
