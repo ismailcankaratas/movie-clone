@@ -208,6 +208,127 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="settings-modal" style="display: none;">
+        <button class="modal-close" onclick="settingsModalToggle()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-content">
+            <div class="modal-body">
+                <form method="post" autocomplete="off" enctype="multipart/form-data" class="form-content">
+                    <div class="settings">
+                        <div class="settings-media">
+                            <div class="form-group">
+                                <div class="media-select">
+                                    <div class="media">
+                                        <img src="https://demo.codelug.com/wovie/public/upload/user/askin.webp" alt="">
+                                    </div>
+                                    <div class="media-btn" id="input-cover">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                            <path
+                                                d="M384 352v64c0 17.67-14.33 32-32 32H96c-17.67 0-32-14.33-32-32v-64c0-17.67-14.33-32-32-32s-32 14.33-32 32v64c0 53.02 42.98 96 96 96h256c53.02 0 96-42.98 96-96v-64c0-17.67-14.33-32-32-32S384 334.3 384 352zM201.4 9.375l-128 128c-12.51 12.51-12.49 32.76 0 45.25c12.5 12.5 32.75 12.5 45.25 0L192 109.3V320c0 17.69 14.31 32 32 32s32-14.31 32-32V109.3l73.38 73.38c12.5 12.5 32.75 12.5 45.25 0s12.5-32.75 0-45.25l-128-128C234.1-3.125 213.9-3.125 201.4 9.375z" />
+                                        </svg>
+                                    </div>
+                                    <div class="media-remove">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                            <path
+                                                d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <input type="file" name="image" class="media-input d-none" id="file-input-cover"
+                                    data-preview="media-select">
+                            </div>
+                        </div>
+                        <div class="settings-informations">
+                            <div class="form-group">
+                                <label class="custom-label">Name</label>
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Name"
+                                    value="Aşkın">
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-label">Username</label>
+                                <input type="text" name="username" class="form-control" placeholder="Username"
+                                    value="Gök123" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-label">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email"
+                                    value="askingokyildiz2@gmail.com" required="true">
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-label">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Password"
+                                    value="">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="custom-label">Gender</label>
+                                        <select name="data[gender]" class="custom-select">
+                                            <option value="">
+                                                Gender </option>
+                                            <option value="2">
+                                                Male </option>
+                                            <option value="1">
+                                                Female </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="custom-label">Location</label>
+                                        <input type="text" name="data[location]" class="form-control"
+                                            placeholder="Location" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-label">About</label>
+                                <textarea name="data[about]" class="form-control" placeholder="About"></textarea>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="custom-label">Facebook</label>
+                                        <input type="text" name="data[social][facebook]" class="form-control"
+                                            placeholder="Facebook" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="custom-label">Twitter</label>
+                                        <input type="text" name="data[social][twitter]" class="form-control"
+                                            placeholder="Twitter" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="custom-label">Instagram</label>
+                                        <input type="text" name="data[social][instagram]" class="form-control"
+                                            placeholder="Instagram" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="custom-label">Youtube</label>
+                                        <input type="text" name="data[social][youtube]" class="form-control"
+                                            placeholder="Youtube" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert bg-warning-lt text-12 mb-3">
+                                Enter your username in social media accounts </div>
+                            <button type="submit" class="btn">Save
+                                Changes
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobil Menu Begin -->
     <div class="mobil-menu" id="mobil-menu">
         <div class="mobil-menu-top">
@@ -238,8 +359,9 @@
                                 Collections</a>
                             <a class="dropdown-item" href="#">
                                 Notifications</a>
-                            <a class="dropdown-item" href="#">
-                                Settings</a>
+                            <a class="dropdown-item" href="#" onclick="settingsModalToggle()">
+                                Settings
+                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">
                                 Logout
@@ -398,7 +520,7 @@
                                 Collections</a>
                             <a class="dropdown-item" href="#">
                                 Notifications</a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="#" onclick="settingsModalToggle()">
                                 Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">

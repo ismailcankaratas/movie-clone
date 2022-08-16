@@ -1,34 +1,37 @@
+// Mobil
 const mobilMenu = document.getElementById("mobil-menu");
 const mobilSearch = document.getElementById("mobil-search");
 const mobilsearchInput = document.getElementById("mobil-search-input");
 const scrollUp = document.getElementById("scroll-up");
 const adsClose = document.getElementById("ads-close");
 
+// Header Search
 const headerSearch = document.getElementById("header-search");
 const searchField = document.getElementById("search-field");
 const searchInput = document.getElementById("search-input");
 const searchResult = document.getElementById("search-result");
-
 const typeaheadBackdrop = document.getElementById("typeahead-backdrop");
 
+// Modals
 const loginModal = document.getElementById("login-modal");
 const registerModal = document.getElementById("register-modal");
 const collectionsModal = document.getElementById("collections-modal");
 const trailerModal = document.getElementById("trailer-modal");
 const reportModal = document.getElementById("report-modal");
 const bookmarkModal = document.getElementById("bookmark-modal");
+const settingsModal = document.getElementById("settings-modal");
 
-
+// Dropdawns
 const authProfile = document.getElementById("auth-profile");
 const authLinks = document.getElementById("auth-links");
 const mobilAuthLinks = document.getElementById("mobil-auth-links");
 const mobilAuthProfile = document.getElementById("mobil-auth-profile");
-
 const dropdownNotification = document.getElementById("dropdown-notification");
 const dropdownPofile = document.getElementById("dropdown-profile");
 const mobilDropdownProfile = document.getElementById("mobil-dropdown-profile");
 const notificationBtn = document.getElementById("notification-btn");
 
+// Tabs
 const tabGeneral = document.getElementById("tab-general");
 const navGeneral = document.getElementById("general-nav");
 const tabCollections = document.getElementById("tab-collections");
@@ -148,6 +151,7 @@ function searchClose() {
     mobilSearch.style.display = "none";
 }
 
+// Modals Toggle
 function loginModalToggle() {
     toggle(loginModal, "flex")
 }
@@ -166,6 +170,9 @@ function reportModalToggle() {
 
 function bookmarkModalToggle() {
     toggle(bookmarkModal, "flex")
+}
+function settingsModalToggle() {
+    toggle(settingsModal, "flex")
 }
 
 function bookmarkTab(tabName) {
@@ -218,7 +225,7 @@ function bookmarkTab(tabName) {
     }
 }
 
-
+// Dropdawns Toggle
 function notificationToggle() {
     dropdownPofile.style.display = "none";
     toggle(dropdownNotification, "block")
