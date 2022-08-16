@@ -41,6 +41,11 @@ const navDiscussions = document.getElementById("discussions-nav");
 const tabFollowing = document.getElementById("tab-following");
 const navFollowing = document.getElementById("following-nav");
 
+const imageInputCover = document.getElementById("input-cover");
+const fileInputCover = document.getElementById("file-input-cover");
+const mediaImage = document.getElementById("media-image");
+const mediaRemove = document.getElementById("media-remove");
+
 window.addEventListener('click', function (event) {
     var isClickInsideProfile = authProfile.contains(event.target);
     var isClickInsideNotification = notificationBtn.contains(event.target);
@@ -51,6 +56,26 @@ window.addEventListener('click', function (event) {
         dropdownNotification.style.display = "none"
     }
 });
+
+imageInputCover.addEventListener('click', function () {
+    fileInputCover.click();
+})
+
+fileInputCover.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file.name.match(/\.jpe?g|png|gif/)) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function () {
+            console.log(this.result);
+            mediaImage.src = this.result;
+        });
+        reader.readAsDataURL(file);
+    }
+})
+
+mediaRemove.addEventListener('click', function () {
+    mediaImage.src = " ";
+})
 
 window.addEventListener('scroll', function () {
     if (window.scrollY >= 100) {

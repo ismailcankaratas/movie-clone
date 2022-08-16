@@ -894,6 +894,8 @@ label {
     border-radius: 6px;
     align-items: center;
     justify-content: center;
+
+    background-color: var(--color-bg-variant);
 }
 
 .settings .media-select .media img {
